@@ -23,8 +23,8 @@
               Nagrobki pojedyńcze to dobry wybór na taką okazję
             </p>
             <nuxt-link class="image-link" to="/nagrobki-pojedyncze"
-              ><svg-arrow :width="32" :height="32"
-            /></nuxt-link>
+              ><svg-arrow :width="32" :height="32" /><span>Sprawdź</span>
+            </nuxt-link>
           </div>
         </div>
         <div class="image-slider-single-image">
@@ -103,32 +103,40 @@
       <div class="aboutus-grid-wrapper">
         <div class="grid-single-item">
           <svg-doswiadczenie />
-          <p class="grid-about-title">Doświadczenie</p>
-          <p class="grid-about-text">
-            Nasze wieloletnie doświadczenie w branży kamieniarskiej w połączeniu
-            z dbałością o szczegóły, pozwala nam spełnić oczekiwania każdego
-            Klienta.
-          </p>
+          <div>
+            <p class="grid-about-title">Doświadczenie</p>
+            <p class="grid-about-text">
+              Nasze wieloletnie doświadczenie w branży kamieniarskiej w
+              połączeniu z dbałością o szczegóły, pozwala nam spełnić
+              oczekiwania każdego Klienta.
+            </p>
+          </div>
         </div>
 
         <div class="grid-single-item">
           <svg-profesjonalizm />
-          <p class="grid-about-title">Profesjonalizm i podejście do Klienta</p>
-          <p class="grid-about-text">
-            W <b>Lastro-Beton</b> obsługujemy Państwa kompleksowo od pomocy w
-            wyborze odpowiedniego kamienia, aż po wykonanie produktu zgodnie z
-            ustalonym wcześniej projektem i montażem.
-          </p>
+          <div>
+            <p class="grid-about-title">
+              Profesjonalizm i podejście do Klienta
+            </p>
+            <p class="grid-about-text">
+              W <b>Lastro-Beton</b> obsługujemy Państwa kompleksowo od pomocy w
+              wyborze odpowiedniego kamienia, aż po wykonanie produktu zgodnie z
+              ustalonym wcześniej projektem i montażem.
+            </p>
+          </div>
         </div>
 
         <div class="grid-single-item">
           <svg-dzialanie />
-          <p class="grid-about-title">Szybkie i sprawne działanie</p>
-          <p class="grid-about-text">
-            Nasz zespół jest profesjonalny i doświadczony, dzięki czemu jesteśmy
-            w stanie szybko i sprawnie realizować wszystkie zamówienia,
-            zapewniając tym samym satysfakcję naszych klientów.
-          </p>
+          <div>
+            <p class="grid-about-title">Szybkie i sprawne działanie</p>
+            <p class="grid-about-text">
+              Nasz zespół jest profesjonalny i doświadczony, dzięki czemu
+              jesteśmy w stanie szybko i sprawnie realizować wszystkie
+              zamówienia, zapewniając tym samym satysfakcję naszych klientów.
+            </p>
+          </div>
         </div>
       </div>
       <div class="statistics">
@@ -254,7 +262,7 @@
           />
         </div>
         <div>
-          <label for="company">Imię i Nazwisko</label>
+          <label for="company">Nazwa firmy</label>
           <input
             type="text"
             name="company"
@@ -355,6 +363,9 @@ export default {
   right: -36px;
   bottom: 8px;
 }
+.image-link span {
+  display: none;
+}
 .header-title {
   color: #1e3455;
   margin: 24px 32px 48px;
@@ -374,6 +385,7 @@ export default {
   align-items: flex-start;
   border-radius: 4px;
   margin: -24px 32px 0;
+  background: #ededed;
 }
 .state {
   color: white;
@@ -492,6 +504,7 @@ export default {
   color: #e3e3e3;
   font-size: 24px;
   margin-top: 24px;
+  font-weight: bold;
 }
 .grid-about-text {
   color: #afafaf;
@@ -597,6 +610,7 @@ form {
     border: none;
     background: #f8f8f8;
     font-size: 16px;
+    margin-right: 16px;
   }
   label {
     margin: 16px 0 8px;
@@ -631,5 +645,250 @@ form {
 }
 .map {
   width: 100%;
+}
+@media (min-width: 744px) {
+  .header-title {
+    margin: 24px 40px 48px;
+    width: 540px;
+    font-size: 48px;
+  }
+  .call-to-action-button {
+    margin-left: 40px;
+  }
+  .image-slider-wrapper {
+    padding: 40px 24px;
+    margin: 0 12px;
+  }
+  .image-slider-single-image:nth-child(1) {
+    width: 442px;
+    img {
+      width: 442px;
+    }
+  }
+  .image-link svg {
+    display: none;
+  }
+  .image-link span {
+    display: initial;
+  }
+  .image-link {
+    background: white;
+    border: none;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 24px;
+    right: -136px;
+  }
+  .slider-state-wrapper {
+    margin: 0 40px;
+  }
+  .quote-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .quote {
+    width: 320px;
+  }
+  .title {
+    width: 460px;
+  }
+  .text {
+    width: 420px;
+    font-size: 18px;
+  }
+  .entry-section-content {
+    margin: 56px 40px 32px 40px;
+  }
+  .offer-grid-wrapper {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0 32px;
+  }
+  .aboutus {
+    padding: 32px 40px;
+  }
+  .entry-section-content-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+  }
+  .title-about {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+  }
+  .text-about {
+    width: 480px;
+  }
+  .grid-single-item {
+    flex-direction: row-reverse;
+    svg {
+      margin-left: 32px;
+    }
+  }
+  .grid-about-text {
+    width: 280px;
+    font-size: 18px;
+  }
+  .grid-about-title {
+    width: 340px;
+    font-size: 24px;
+  }
+  .statistics {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    p {
+      margin: 12px;
+      &:nth-child(3) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .category-wrapper p:nth-child(1) {
+    margin-left: 40px;
+  }
+  .realisations-images-grid img {
+    width: 360px;
+    height: 360px;
+  }
+  .single-opinion {
+    width: 536px;
+    height: 360px;
+  }
+  .opinion-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .opinion-content {
+    font-size: 22px;
+    width: 400px;
+  }
+  .more-opinions-text {
+    width: 240px;
+  }
+  .call-to-action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #555555;
+  }
+  .more-opinions-button {
+    margin: 24px 32px 0 32px;
+  }
+  .contact-info-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    div {
+      width: 50%;
+      &:nth-last-child(1) {
+        width: 100%;
+      }
+    }
+  }
+  .form-send-message {
+    margin: 24px 0 72px;
+  }
+}
+@media (min-width: 1280px) {
+  .header-title {
+    font-size: 48px;
+    width: 407px;
+    margin: 24px 80px 48px;
+  }
+  .call-to-action-button {
+    margin-left: 80px;
+  }
+  .image-slider-wrapper {
+    padding: 40px 56px;
+  }
+  .slider-state-wrapper {
+    margin: 0 80px;
+  }
+  .quote-wrapper {
+    position: absolute;
+    top: 176px;
+    right: 80px;
+  }
+  .image-slider-single-image:nth-child(1) {
+    width: 740px;
+    height: 484px;
+    img {
+      width: 740px;
+      height: 484px;
+    }
+  }
+  .image-slider-single-image:nth-child(2) {
+    width: 548px;
+    height: 410px;
+    img {
+      width: 548px;
+      height: 410px;
+    }
+  }
+  .image-subtitle {
+    font-size: 16px;
+  }
+  .image-title {
+    font-size: 24px;
+    width: auto;
+  }
+  .entry-section-content {
+    margin: 56px 80px 32px 80px;
+  }
+  .offer-grid-wrapper {
+    grid-template-columns: 300px 300px 300px;
+    justify-content: flex-start;
+    margin-left: 80px;
+  }
+  .title-about {
+    font-size: 48px;
+  }
+  .text-about {
+    font-size: 24px;
+    width: 680px;
+  }
+  .statistics {
+    width: 680px;
+  }
+  .category-wrapper {
+    margin-left: 40px;
+  }
+  .realisations-images-grid {
+    grid-template-columns: 360px 360px 360px;
+    grid-gap: 16px;
+    margin: 0 40px;
+  }
+  .opinion-grid {
+    margin: 0 40px;
+  }
+  .call-to-action-wrapper {
+    margin: 0 40px;
+  }
+  form {
+    margin-right: 80px;
+    margin-left: 80px;
+  }
 }
 </style>

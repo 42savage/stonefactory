@@ -3,11 +3,18 @@
     <p class="logo">Lastro-Beton</p>
     <nav>
       <ul class="link-wrapper" ref="linkWrapper">
-        <li class="single-link"><a href="#" class="link">Strona główna</a></li>
+        <li class="single-link">
+          <nuxt-link to="/" class="link">Strona główna</nuxt-link>
+        </li>
         <li class="single-link"><a href="#" class="link">Oferta</a></li>
         <li class="single-link"><a href="#" class="link">O firmie</a></li>
         <li class="single-link"><a href="#" class="link">Realizacje</a></li>
-        <li class="single-link"><a href="#" class="link">Kontakt</a></li>
+        <li class="single-link contact-link-mobile">
+          <a href="#" class="link">Kontakt</a>
+        </li>
+        <li class="single-link contact-link-desktop">
+          <a href="#" class="link">Skontaktuj się z nami</a>
+        </li>
       </ul>
       <button class="toggle-navigation" @click="toggleNavigation">
         <div class="line"></div>
@@ -32,6 +39,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.contact-link-desktop {
+  display: none;
+}
 .main-navigation {
   display: flex;
   flex-direction: row;
@@ -39,6 +49,7 @@ export default {
   align-items: center;
   padding: 48px 32px;
 }
+
 .link-wrapper {
   display: none;
   flex-direction: column;
@@ -69,6 +80,74 @@ export default {
     background: #1e3455;
     width: 8px;
     height: 100%;
+  }
+}
+@media (min-width: 744px) {
+  .main-navigation {
+    padding: 52px 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .contact-link-desktop {
+    display: initial;
+  }
+  .contact-link-mobile {
+    display: none;
+  }
+  .main-navigation {
+    padding: 52px 80px;
+    position: relative;
+    &::after {
+      content: '';
+      width: calc(100% - 160px);
+      height: 2px;
+      background: #e2e2e2;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  .toggle-navigation {
+    display: none;
+  }
+  .link-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    li {
+      list-style-type: none;
+      margin: 0 28px;
+      a {
+        text-decoration: none;
+        color: #787878;
+      }
+      &:nth-last-child(1) {
+        margin-left: 120px;
+        border-radius: 24px;
+        background: #1e3455;
+        border: none;
+        padding: 8px 24px;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  .nuxt-link-exact-active {
+    color: #1e3455 !important;
+    position: relative;
+    &::after {
+      content: '';
+      background: #1e3455;
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      z-index: 2;
+    }
   }
 }
 </style>
