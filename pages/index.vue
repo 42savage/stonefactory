@@ -392,6 +392,8 @@ export default {
   width: 33%;
   height: 8px;
   border-radius: 4px;
+  &:hover {
+  }
 }
 .state.active {
   background: #c2c2c2;
@@ -879,6 +881,12 @@ form {
     grid-template-columns: 360px 360px 360px;
     grid-gap: 16px;
     margin: 0 40px;
+  }
+  .opinions {
+    background: #f8f8f8;
+    border-radius: 24px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
   .opinion-grid {
     margin: 0 40px;

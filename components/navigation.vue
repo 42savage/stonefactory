@@ -122,6 +122,9 @@ export default {
       a {
         text-decoration: none;
         color: #787878;
+        &:hover {
+          color: #1e3455;
+        }
       }
       &:nth-last-child(1) {
         margin-left: 120px;
@@ -129,6 +132,9 @@ export default {
         background: #1e3455;
         border: none;
         padding: 8px 24px;
+        &:hover {
+          background: #15253d;
+        }
         a {
           color: white;
         }

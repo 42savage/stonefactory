@@ -1,5 +1,6 @@
 <template>
   <div>
+    <contactInfoBar />
     <navigation />
     <Nuxt />
     <TheFooter />

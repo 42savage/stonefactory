@@ -89,4 +89,9 @@ footer {
   bottom: 0;
   left: 0;
 }
+@media (min-width: 1280px) {
+  footer {
+    padding: 32px 80px 120px 80px;
+  }
+}
 </style>
