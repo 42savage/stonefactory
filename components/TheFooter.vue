@@ -90,8 +90,43 @@ footer {
   left: 0;
 }
 @media (min-width: 1280px) {
+  .logo {
+    align-items: flex-start;
+    margin: 0;
+  }
   footer {
-    padding: 32px 80px 120px 80px;
+    padding: 40px 80px 80px;
+    align-items: flex-end;
+    position: relative;
+  }
+  .adress {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    flex-direction: column;
+  }
+  .email,
+  .phone {
+    width: 260px;
+    margin: 4px 0;
+  }
+  .socials {
+    margin: 0;
+    position: absolute;
+    left: 80px;
+    width: 320px;
+  }
+  .email,
+  .phone,
+  .adress,
+  .socials,
+  .author-section {
+    font-size: 14px;
   }
 }
 </style>

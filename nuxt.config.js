@@ -22,10 +22,10 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  server: {
-    port: 8000, // default: 3000
-    host: '0.0.0.0',
-  },
+  // server: {
+  //   port: 8000, // default: 3000
+  //   host: '0.0.0.0',
+  // },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ['nuxt-gsap-module'],
 
