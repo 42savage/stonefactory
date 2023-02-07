@@ -8,9 +8,11 @@ export const state = () => ({
       },
       title: 'Wysokiej jakości',
       name: 'Blaty z kamienia',
+      content:
+        'Blaty z kamienia są popularnym wyborem do kuchni ze względu na ich trwałość, elegancki wygląd i funkcjonalność. Charakteryzują się one odpornością na wysokie temperatury, wilgoć i ścieranie, co czyni je idealnymi do kuchni i łazienek.',
       route: {
-        link: '/blaty-z-kamienia',
-        name: 'Blaty z kamienia',
+        link: '/oferta/blaty-z-kamienia',
+        name: 'blatów z kamienia',
       },
     },
     {
@@ -21,9 +23,11 @@ export const state = () => ({
       },
       title: 'Wysokiej jakości',
       name: 'Nagrobki podwójne',
+      content:
+        'Nagrobek z kamienia to trwały i elegancki wybór na pomnik grobowy. Nasz zakład kamieniarski oferuje szeroki wybór nagrobków z różnych kamieni, takich jak granit, marmur, kwarcyt i inne.',
       route: {
-        link: '/nagrobki-podwojne',
-        name: 'Nagrobki podwojne',
+        link: '/oferta/nagrobki-podwojne',
+        name: 'nagrobków podwójnych',
       },
     },
     {
@@ -34,9 +38,11 @@ export const state = () => ({
       },
       title: 'Wytrzymujący lata',
       name: 'Nagrobki pojedyńcze',
+      content:
+        'Nagrobek z kamienia to trwały i elegancki wybór na pomnik grobowy. Nasz zakład kamieniarski oferuje szeroki wybór nagrobków z różnych kamieni, takich jak granit, marmur, kwarcyt i inne.',
       route: {
-        link: '/nagrobki-pojedyncze',
-        name: 'Nagrobki pojedyńcze',
+        link: '/oferta/nagrobki-pojedyncze',
+        name: 'nagrobków pojedyńczych',
       },
     },
     {
@@ -47,9 +53,11 @@ export const state = () => ({
       },
       title: 'Schody z kamienia',
       name: 'Praktkyczne i eleganckie',
+      content:
+        'Schody z kamienia są popularnym wyborem do domów ze względu na ich trwałość, elegancki wygląd i funkcjonalność. Charakteryzują się one odpornością na ścieranie, uderzenia, wilgoć i zmiany temperatury, co czyni je idealnymi do użytku domowego.',
       route: {
-        link: '/schody-z-kamienia',
-        name: 'Schody z kamienia',
+        link: '/oferta/schody-z-kamienia',
+        name: 'schodów z kamienia',
       },
     },
     {
@@ -60,9 +68,11 @@ export const state = () => ({
       },
       title: 'Marmurowe lub z lastryko',
       name: 'Nagrobki dziecięce',
+      content:
+        'Nagrobek dla dziecka to delikatny i subtelny wybór na pomnik grobowy. Nasz zakład kamieniarski oferuje szeroki wybór nagrobków dla dzieci, z różnych kamieni takich jak granit, marmur, kwarcyt i inne.',
       route: {
-        link: '/nagrobki-dzieciece',
-        name: 'Nagrobki dziecięce',
+        link: '/oferta/nagrobki-dzieciece',
+        name: 'nagrobków dziecięcych',
       },
     },
   ],

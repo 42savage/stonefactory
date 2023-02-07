@@ -1,14 +1,42 @@
 <template>
   <div class="main-navigation">
-    <p class="logo">Lastro-Beton</p>
+    <p class="logo" :class="{ lightText: this.$route.name === 'oferta' }">
+      Lastro-Beton
+    </p>
     <nav>
       <ul class="link-wrapper" ref="linkWrapper">
         <li class="single-link">
-          <nuxt-link to="/" class="link">Strona główna</nuxt-link>
+          <nuxt-link
+            to="/"
+            class="link"
+            :class="{ lightText: this.$route.name === 'oferta' }"
+            >Strona główna</nuxt-link
+          >
         </li>
-        <li class="single-link"><a href="#" class="link">Oferta</a></li>
-        <li class="single-link"><a href="#" class="link">O firmie</a></li>
-        <li class="single-link"><a href="#" class="link">Realizacje</a></li>
+        <li class="single-link">
+          <nuxt-link
+            to="/oferta"
+            class="link"
+            :class="{ lightText: this.$route.name === 'oferta' }"
+            >Oferta</nuxt-link
+          >
+        </li>
+        <li class="single-link">
+          <nuxt-link
+            to="/o-firmie"
+            class="link"
+            :class="{ lightText: this.$route.name === 'oferta' }"
+            >O firmie</nuxt-link
+          >
+        </li>
+        <li class="single-link">
+          <nuxt-link
+            to="/realizacje"
+            class="link"
+            :class="{ lightText: this.$route.name === 'oferta' }"
+            >Realizacje</nuxt-link
+          >
+        </li>
         <li class="single-link contact-link-mobile">
           <a href="#" class="link">Kontakt</a>
         </li>
@@ -34,6 +62,7 @@ export default {
   },
   mounted() {
     this.tl = this.$gsap.timeline()
+    console.log(this.$route)
   },
 }
 </script>
@@ -154,6 +183,12 @@ export default {
       height: 2px;
       z-index: 2;
     }
+  }
+  .lightText {
+    color: white !important;
+  }
+  .lightMenu {
+    background: white !important;
   }
 }
 </style>

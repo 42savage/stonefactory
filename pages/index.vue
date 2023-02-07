@@ -231,7 +231,7 @@
         <button class="more-opinions-button">Sprawdź opinie</button>
       </div>
     </section>
-    <section class="contact-us">
+    <!-- <section class="contact-us">
       <div>
         <div class="entry-section-content">
           <p class="sub-title">Przedstaw nam swoje oczekiwania</p>
@@ -318,7 +318,8 @@
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-    </section>
+    </section> -->
+    <contactForm />
   </div>
 </template>
 
@@ -656,58 +657,58 @@ export default {
   font-size: 16px;
 }
 
-.contact-info-grid {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  grid-gap: 16px;
-  margin: 0 32px;
-}
-form {
-  margin: 0 32px;
-  input,
-  select {
-    padding: 16px;
-    border-radius: 24px;
-    border: none;
-    background: #f8f8f8;
-    font-size: 16px;
-    margin-right: 16px;
-  }
-  label {
-    margin: 16px 0 8px;
-    font-weight: bold;
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-  textarea {
-    background: #f8f8f8;
-    border: none;
-    min-height: 144px;
-    padding: 8px;
-    font-size: 16px;
-  }
-}
-.form-send-message {
-  background: #2d2d2d;
-  border: none;
-  border-radius: 24px;
-  padding: 8px 24px;
-  color: white;
-  margin-top: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  svg {
-    margin-left: 16px;
-  }
-}
-.map {
-  width: 100%;
-  height: 450px;
-}
+// .contact-info-grid {
+//   display: grid;
+//   grid-template-columns: 180px 1fr;
+//   grid-gap: 16px;
+//   margin: 0 32px;
+// }
+// form {
+//   margin: 0 32px;
+//   input,
+//   select {
+//     padding: 16px;
+//     border-radius: 24px;
+//     border: none;
+//     background: #f8f8f8;
+//     font-size: 16px;
+//     margin-right: 16px;
+//   }
+//   label {
+//     margin: 16px 0 8px;
+//     font-weight: bold;
+//   }
+//   div {
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   textarea {
+//     background: #f8f8f8;
+//     border: none;
+//     min-height: 144px;
+//     padding: 8px;
+//     font-size: 16px;
+//   }
+// }
+// .form-send-message {
+//   background: #2d2d2d;
+//   border: none;
+//   border-radius: 24px;
+//   padding: 8px 24px;
+//   color: white;
+//   margin-top: 16px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 180px;
+//   svg {
+//     margin-left: 16px;
+//   }
+// }
+// .map {
+//   width: 100%;
+//   height: 450px;
+// }
 @media (min-width: 744px) {
   .header-title {
     margin: 24px 40px 48px;
@@ -846,32 +847,32 @@ form {
   .more-opinions-button {
     margin: 24px 32px 0 32px;
   }
-  .contact-info-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: left;
-    }
-  }
-  form {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    div {
-      width: 50%;
-      &:nth-last-child(1) {
-        width: 100%;
-      }
-    }
-  }
-  .form-send-message {
-    margin: 24px 0 72px;
-  }
+  // .contact-info-grid {
+  //   grid-template-columns: 1fr 1fr 1fr;
+  //   justify-content: center;
+  //   align-items: center;
+  //   div {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     flex-direction: column;
+  //     text-align: left;
+  //   }
+  // }
+  // form {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   margin-top: 40px;
+  //   div {
+  //     width: 50%;
+  //     &:nth-last-child(1) {
+  //       width: 100%;
+  //     }
+  //   }
+  // }
+  // .form-send-message {
+  //   margin: 24px 0 72px;
+  // }
 }
 @media (min-width: 1280px) {
   *::-webkit-scrollbar {
