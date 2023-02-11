@@ -184,11 +184,13 @@
           </p>
         </div>
         <div class="realisations-images-grid">
-          <img
+          <nuxt-img
             v-for="realisation in realisations"
             :key="realisation.id"
             :src="realisation.src"
             :alt="realisation.alt"
+            placeholder
+            width="360"
           />
         </div>
       </div>
@@ -228,7 +230,12 @@
           pellentesque felis arcu, tristique commodo vitae, libero blandit
           nullam. Libero, pulvinar rutrum commodo leo.
         </p>
-        <button class="more-opinions-button">Sprawdź opinie</button>
+        <button
+          aria-label="Przycisk włączajacy nawigację po stronie"
+          class="more-opinions-button"
+        >
+          Sprawdź opinie
+        </button>
       </div>
     </section>
     <!-- <section class="contact-us">

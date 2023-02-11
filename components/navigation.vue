@@ -1,8 +1,13 @@
 <template>
   <div class="main-navigation">
-    <p class="logo" :class="{ lightText: this.$route.name === 'oferta' }">
+    <nuxt-link
+      to="/"
+      class="logo"
+      :class="{ lightText: this.$route.name === 'oferta' }"
+      aria-label="Przejdź na stronę główną"
+    >
       Lastro-Beton
-    </p>
+    </nuxt-link>
     <nav>
       <ul class="link-wrapper" ref="linkWrapper">
         <li class="single-link">
@@ -10,6 +15,7 @@
             to="/"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
+            aria-label="Przejdź na stronę główną"
             >Strona główna</nuxt-link
           >
         </li>
@@ -18,6 +24,7 @@
             to="/oferta"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
+            aria-label="Przejdź na stronę z ofertą"
             >Oferta</nuxt-link
           >
         </li>
@@ -26,6 +33,7 @@
             to="/o-firmie"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
+            aria-label="Przejdź na stronę o firmie"
             >O firmie</nuxt-link
           >
         </li>
@@ -34,14 +42,25 @@
             to="/realizacje"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
+            aria-label="Przejdź na stronę o realizacjach"
             >Realizacje</nuxt-link
           >
         </li>
         <li class="single-link contact-link-mobile">
-          <a href="#" class="link">Kontakt</a>
+          <nuxt-link
+            to="/#kontakt"
+            aria-label="Skorzystaj z formularza kontaktowego"
+            class="link"
+            >Kontakt</nuxt-link
+          >
         </li>
         <li class="single-link contact-link-desktop">
-          <a href="#" class="link">Skontaktuj się z nami</a>
+          <nuxt-link
+            aria-label="Skorzystaj z formularza kontaktowego"
+            to="/#kontakt"
+            class="link"
+            >Skontaktuj się z nami</nuxt-link
+          >
         </li>
       </ul>
       <button class="toggle-navigation" @click="toggleNavigation">
@@ -101,6 +120,7 @@ export default {
   font-size: 24px;
   margin-left: 16px;
   font-weight: bold;
+  text-decoration: none;
   &::after {
     content: '';
     position: absolute;
@@ -165,12 +185,12 @@ export default {
           background: #15253d;
         }
         a {
-          color: white;
+          color: white !important;
         }
       }
     }
   }
-  .nuxt-link-exact-active {
+  .nuxt-link-exact-active.link {
     color: #1e3455 !important;
     position: relative;
     &::after {

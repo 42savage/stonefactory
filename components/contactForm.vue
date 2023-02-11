@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-us">
+  <section class="contact-us" id="kontakt">
     <div>
       <div class="entry-section-content">
         <p class="sub-title">Przedstaw nam swoje oczekiwania</p>
@@ -33,7 +33,13 @@
       <form>
         <div>
           <label for="name">Imię i Nazwisko</label>
-          <input type="text" name="name" id="name" placeholder="Jan Kowalski" />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            aria-label="Imię i nazwisko"
+            placeholder="Jan Kowalski"
+          />
         </div>
         <div>
           <label for="email">Adres email</label>
@@ -42,6 +48,7 @@
             name="email"
             id="email"
             placeholder="jankowalski@poczta.pl"
+            aria-label="Adres email"
           />
         </div>
         <div>
@@ -51,6 +58,7 @@
             name="company"
             id="company"
             placeholder="Opcjonalnie"
+            aria-label="Firma (opcjonalnie)"
           />
         </div>
         <div>
@@ -74,6 +82,7 @@
       </form>
     </div>
     <iframe
+      title="Mapa"
       class="map"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d844.3046849291316!2d21.247554778976507!3d51.31512823066229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718670b5e846963%3A0x271000285bde5ebc!2sLASTRO-BETON%20ZAK%C5%81AD%20KAMIENIARSKI!5e0!3m2!1spl!2snl!4v1672865956760!5m2!1spl!2snl"
       style="border: 0"
