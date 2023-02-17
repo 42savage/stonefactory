@@ -19,7 +19,7 @@
     </header>
     <section class="realisations-grid">
       <h2>Blaty z kamienia</h2>
-      <div class="grid">
+      <div id="blaty-z-kamienia" class="grid">
         <nuxt-img
           v-for="blat in blaty"
           :key="blat.id"
@@ -30,7 +30,7 @@
       </div>
 
       <h2>Schody z kamienia</h2>
-      <div class="grid">
+      <div id="schody-z-kamienia" class="grid">
         <nuxt-img
           v-for="schody in schodyArr"
           :key="schody.id"
@@ -41,7 +41,7 @@
       </div>
 
       <h2>Nagrobki pojedyńcze</h2>
-      <div class="grid">
+      <div id="nagrobki-pojedyncze" class="grid">
         <nuxt-img
           v-for="nagrobki in nagrobkiPojedyncze"
           :key="nagrobki.id"
@@ -52,7 +52,7 @@
       </div>
 
       <h2>Nagrobki podwójne</h2>
-      <div class="grid">
+      <div id="nagrobki-podwojne" class="grid">
         <nuxt-img
           v-for="nagrobki in nagrobkiPodwojne"
           :key="nagrobki.id"
@@ -63,7 +63,7 @@
       </div>
 
       <h2>Nagrobki dziecięce</h2>
-      <div class="grid">
+      <div id="nagrobki-dzieciece" class="grid">
         <nuxt-img
           v-for="nagrobki in nagrobkiDzieciece"
           :key="nagrobki.id"

@@ -37,7 +37,8 @@ export default {}
 
 <style scoped lang="scss">
 footer {
-  background: #2d2d2d;
+  // background: #2d2d2d;
+  background: #0d0e16;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -84,7 +85,8 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 16px 0;
-  background: #2a2a2a;
+  // background: #2a2a2a;
+  background: #090a0f;
   position: absolute;
   bottom: 0;
   left: 0;
