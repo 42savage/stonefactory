@@ -52,12 +52,16 @@
         <div class="state"></div>
         <div class="state"></div>
       </div>
-      <div class="quote-wrapper">
+      <quote
+        :quoteContent="'Widziałem anioła w marmurze i rzeźbiłem, dopóki go nie uwolniłem.'"
+        :quoteAuthor="'~Michał Anioł'"
+      />
+      <!-- <div class="quote-wrapper">
         <p class="quote">
           Widziałem anioła w marmurze i rzeźbiłem, dopóki go nie uwolniłem.
         </p>
         <p class="quote-author">~Michał Anioł</p>
-      </div>
+      </div> -->
     </header>
     <section class="offer">
       <div class="entry-section-content">
@@ -437,28 +441,28 @@ export default {
 .state.active {
   background: #c2c2c2;
 }
-.quote-wrapper {
-  margin: 56px 32px 32px 56px;
-}
-.quote {
-  font-size: 24px;
-  position: relative;
-  color: #555555;
-  &::before {
-    content: '”';
-    color: #e9e9e9;
-    font-size: 240px;
-    position: absolute;
-    top: -62px;
-    left: -36px;
-    opacity: 0.8;
-    z-index: -1;
-  }
-}
-.quote-author {
-  text-align: right;
-  margin-top: 16px;
-}
+// .quote-wrapper {
+//   margin: 56px 32px 32px 56px;
+// }
+// .quote {
+//   font-size: 24px;
+//   position: relative;
+//   color: #555555;
+//   &::before {
+//     content: '”';
+//     color: #e9e9e9;
+//     font-size: 240px;
+//     position: absolute;
+//     top: -62px;
+//     left: -36px;
+//     opacity: 0.8;
+//     z-index: -1;
+//   }
+// }
+// .quote-author {
+//   text-align: right;
+//   margin-top: 16px;
+// }
 .entry-section-content {
   margin: 56px 32px 32px;
 }

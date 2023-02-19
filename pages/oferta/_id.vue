@@ -3,6 +3,10 @@
     <header>
       <h1 class="page-title">{{ currentPage.header.title }}</h1>
       <p class="page-content">{{ currentPage.header.content }}</p>
+      <div class="quote-wrapper">
+        <p class="quote-content">{{ currentPage.header.quote }}</p>
+        <p class="quote-author">{{ currentPage.header.quoteAuthor }}</p>
+      </div>
       <div class="icon-row">
         <div
           class="single-icon"
@@ -171,6 +175,9 @@ header {
 @media (min-width: 744px) {
   .page-content {
     width: 480px;
+  }
+  img {
+    object-fit: cover;
   }
 }
 </style>
