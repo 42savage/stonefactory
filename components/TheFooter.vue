@@ -6,13 +6,17 @@
     </div>
     <div class="email">
       <svg-mail :fill="'white'" :stroke="'#555555'" />
-      <p class="email-content">pawel.dzieniak@onet.pl</p>
-      <p class="email-content">kontakt@kamieniarstwobeton.pl</p>
+      <a href="mailto:pawel.dzieniak@onet.pl" class="email-content"
+        >pawel.dzieniak@onet.pl</a
+      >
+      <a href="mailto:kontakt@kamieniarstwobeton.pl" class="email-content"
+        >kontakt@kamieniarstwobeton.pl</a
+      >
     </div>
     <div class="phone">
       <svg-phone :fill="'white'" />
-      <p class="phone-content">+48 502-439-989</p>
-      <p class="phone-conten">+48 512-188-034</p>
+      <a href="tel:+48502439989" class="phone-content">+48 502-439-989</a>
+      <a href="tel:+48502439989" class="phone-content">+48 512-188-034</a>
     </div>
     <div class="adress">
       <svg-map-pin :fill="'white'" :stroke="'#555555'" />
@@ -69,6 +73,12 @@ footer {
   color: white;
   font-size: 18px;
   margin: 16px 0;
+  a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+  }
 }
 .socials {
   margin-top: 144px;
