@@ -63,7 +63,11 @@
           >
         </li>
       </ul>
-      <button class="toggle-navigation" @click="toggleNavigation">
+      <button
+        :class="{ lightMenu: this.$route.name === 'oferta' }"
+        class="toggle-navigation"
+        @click="toggleNavigation"
+      >
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -87,6 +91,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.lightText {
+  color: white !important;
+}
+.lightMenu {
+  div {
+    background: white !important;
+    border-color: white;
+  }
+}
 .contact-link-desktop {
   display: none;
 }
@@ -131,6 +144,7 @@ export default {
     height: 100%;
   }
 }
+
 @media (min-width: 744px) {
   .main-navigation {
     padding: 52px 40px;
@@ -203,12 +217,6 @@ export default {
       height: 2px;
       z-index: 2;
     }
-  }
-  .lightText {
-    color: white !important;
-  }
-  .lightMenu {
-    background: white !important;
   }
 }
 </style>
