@@ -98,6 +98,9 @@ export default {}
 </script>
 
 <style scoped lang="scss">
+.entry-section-content {
+  margin-top: 32px;
+}
 .text,
 .title,
 .sub-title {
