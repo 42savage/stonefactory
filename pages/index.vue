@@ -50,8 +50,10 @@
             <nuxt-link
               to="/oferta/schody-z-kamienia"
               class="image-slider-content-small-link"
-              >Schody z kamienia</nuxt-link
-            >
+              >Schody z kamienia
+              <span
+                ><svg-arrow :color="'#1E3455'" :width="24" :height="24" /></span
+            ></nuxt-link>
           </div>
         </div>
       </div>
@@ -952,6 +954,35 @@ export default {
   .image-title {
     font-size: 24px;
     width: auto;
+  }
+
+  .image-slider-content-small-title {
+    color: #767676 !important;
+    font-size: 16px;
+    font-weight: lighter;
+  }
+  .image-slider-content-small-link {
+    font-size: 32px;
+    color: #1e3455 !important;
+    font-weight: bold;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+  }
+  .image-slider-content-small {
+    position: relative;
+    bottom: initial;
+    left: initial;
+    span {
+      border: 1px solid #aaaaaa;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 16px;
+    }
   }
   .entry-section-content {
     margin: 56px 80px 32px 80px;
