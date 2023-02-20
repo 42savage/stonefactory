@@ -209,5 +209,16 @@ header {
   .call-to-realisations {
     padding: 0 80px;
   }
+  .rest div {
+    justify-content: space-between;
+  }
+  .bullet-list {
+    width: 420px;
+  }
+  .section-image {
+    width: 40%;
+    height: 600px;
+    margin-top: -196px;
+  }
 }
 </style>

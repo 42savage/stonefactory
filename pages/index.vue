@@ -45,6 +45,14 @@
             alt="Zdjęcie przedstawiające schody"
             class="image-slider-mobile-image"
           />
+          <div class="image-slider-content-small">
+            <p class="image-slider-content-small-title">Popularny wybór</p>
+            <nuxt-link
+              to="/oferta/schody-z-kamienia"
+              class="image-slider-content-small-link"
+              >Schody z kamienia</nuxt-link
+            >
+          </div>
         </div>
       </div>
       <div class="slider-state-wrapper">
@@ -361,7 +369,7 @@ export default {
   flex-direction: row;
   overflow: scroll;
   width: 100vw;
-  padding: 56px 0;
+  padding: 56px 24px;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -380,15 +388,14 @@ export default {
 }
 .image-slider-single-image:nth-child(2) {
   width: 290px;
-  height: 276px img {
-    width: 290px;
-    height: 276px;
-  }
+  position: relative;
 }
 .slider-image-content {
   position: absolute;
   bottom: 24px;
-  left: 24px;
+  left: 0;
+  width: 100%;
+  padding: 0 24px;
   color: white;
 }
 .image-subtitle {
@@ -407,6 +414,20 @@ export default {
 .image-link span {
   display: none;
 }
+.image-slider-content-small {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  p {
+    font-weight: bold;
+  }
+  p,
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 .header-title {
   color: #1e3455;
   margin: 24px 32px 48px;
@@ -751,7 +772,7 @@ export default {
     padding: 8px 16px;
     text-decoration: none;
     border-radius: 24px;
-    right: -136px;
+    right: 24px;
   }
   .slider-state-wrapper {
     margin: 0 40px;
