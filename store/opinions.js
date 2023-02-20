@@ -9,7 +9,7 @@ export const state = () => ({
     },
     {
       id: 1,
-      name: 'Danuta Stol',
+      name: 'Danuta Sabat',
       content:
         'Sprawna realizacja zamówienia i profesjonalna obsługa, to jest to czego potrzebowałam w tej trudnej chwili.',
       stars: 5,

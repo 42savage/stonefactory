@@ -3,10 +3,10 @@
     <header>
       <h1 class="page-title">{{ currentPage.header.title }}</h1>
       <p class="page-content">{{ currentPage.header.content }}</p>
-      <div class="quote-wrapper">
-        <p class="quote-content">{{ currentPage.header.quote }}</p>
-        <p class="quote-author">{{ currentPage.header.quoteAuthor }}</p>
-      </div>
+      <quote
+        :quoteContent="currentPage.header.quote"
+        :quoteAuthor="currentPage.header.quoteAuthor"
+      />
       <div class="icon-row">
         <div
           class="single-icon"
@@ -29,18 +29,23 @@
     <section class="rest">
       <h2 class="section-title">{{ currentPage.section.title }}</h2>
       <p class="section-content">{{ currentPage.section.content }}</p>
-      <nuxt-img class="section-image" :src="currentPage.section.sectionImage" />
-      <ul class="bullet-list">
-        <p class="bullet-title">{{ currentPage.section.bulletTitle }}</p>
-        <li
-          class="single-bullet"
-          v-for="bullet in currentPage.section.bullets"
-          :key="bullet.id"
-        >
-          <b>{{ bullet.title }}</b
-          ><span>{{ bullet.content }}</span>
-        </li>
-      </ul>
+      <div>
+        <nuxt-img
+          class="section-image"
+          :src="currentPage.section.sectionImage"
+        />
+        <ul class="bullet-list">
+          <p class="bullet-title">{{ currentPage.section.bulletTitle }}</p>
+          <li
+            class="single-bullet"
+            v-for="bullet in currentPage.section.bullets"
+            :key="bullet.id"
+          >
+            <b>{{ bullet.title }}</b
+            ><span>{{ bullet.content }}</span>
+          </li>
+        </ul>
+      </div>
     </section>
     <div class="call-to-realisations">
       <p>Zapoznaj się z naszymi realizacjami</p>
@@ -173,11 +178,36 @@ header {
   }
 }
 @media (min-width: 744px) {
+  header {
+    position: relative;
+    padding-bottom: 136px; // padding to fit absolute position of quote component
+  }
   .page-content {
     width: 480px;
   }
   img {
     object-fit: cover;
+  }
+  .rest div {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .section-title,
+  .section-content {
+    width: 560px;
+  }
+  .bullet-list {
+    margin-top: 40px;
+  }
+  .call-to-realisations p {
+    width: 280px;
+  }
+}
+@media (min-width: 1280px) {
+  header,
+  .rest,
+  .call-to-realisations {
+    padding: 0 80px;
   }
 }
 </style>

@@ -220,5 +220,14 @@ form {
     height: 100%;
     width: 100%;
   }
+  .sub-title,
+  .title,
+  .text {
+    padding: 0 80px;
+  }
+  .contact-info-grid {
+    grid-template-columns: 1fr 1fr;
+    margin: 56px 80px 0 80px;
+  }
 }
 </style>

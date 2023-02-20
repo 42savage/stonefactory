@@ -1,5 +1,10 @@
 <template>
-  <div class="quote-wrapper">
+  <div
+    class="quote-wrapper"
+    :class="{
+      quoteOfferTablet: this.$route.name === 'oferta-id' && this.$mq === 'md',
+    }"
+  >
     <p class="quote">
       {{ quoteContent }}
     </p>
@@ -25,7 +30,7 @@ export default {
 <style scoped lang="scss">
 .quote-wrapper {
   margin: 56px 32px 32px 56px;
-  width: 320px;
+  max-width: 320px;
 }
 .quote {
   font-size: 24px;
@@ -45,5 +50,19 @@ export default {
 .quote-author {
   text-align: right;
   margin-top: 16px;
+}
+@media (min-width: 744px) {
+  .quoteOfferTablet {
+    position: absolute;
+    bottom: -24px;
+    right: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .quote-wrapper {
+    position: absolute;
+    right: 80px;
+    top: 0;
+  }
 }
 </style>

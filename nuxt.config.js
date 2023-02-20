@@ -30,7 +30,7 @@ export default {
   buildModules: ['nuxt-gsap-module'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxt/image'],
+  modules: ['@nuxt/image', 'nuxt-mq'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
