@@ -27,7 +27,7 @@
               Odpowiedni pomnik dla Twojej bliskiej osoby
             </p>
             <p class="image-title">Nagrobki pojedyńcze, nagrobki podwójne</p>
-            <nuxt-link class="image-link" to="/nagrobki-pojedyncze"
+            <nuxt-link class="image-link" to="oferta/nagrobki-pojedyncze"
               ><svg-arrow :width="32" :height="32" /><span>Sprawdź</span>
             </nuxt-link>
           </div>
