@@ -14,8 +14,8 @@
           <nuxt-link
             to="/"
             class="link"
-            :class="{ lightText: this.$route.name === 'oferta' }"
             aria-label="Przejdź na stronę główną"
+            :class="{ lightText: this.$route.name === 'oferta' }"
             >Strona główna</nuxt-link
           >
         </li>
@@ -205,8 +205,9 @@ export default {
     }
   }
   .nuxt-link-exact-active.link {
-    color: #1e3455 !important;
+    color: #1e3455;
     position: relative;
+    font-weight: bold;
     &::after {
       content: '';
       background: #1e3455;
