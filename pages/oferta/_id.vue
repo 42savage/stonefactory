@@ -118,7 +118,7 @@ header {
 }
 .header-image {
   width: 100%;
-  height: 400px;
+  // height: 400px;
   margin-top: 16px;
   margin-bottom: 40px;
 }
