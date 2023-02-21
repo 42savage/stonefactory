@@ -348,6 +348,67 @@ export const state = () => ({
         sectionImage: '/main_realisations/schody/6.jpeg',
       },
     },
+
+    {
+      id: 4,
+      route: { link: 'nagrobki-dzieciece', name: 'nagrobków dziecięcych' },
+      header: {
+        title: 'Nagrobki dziecięce',
+        content:
+          'Śmierć dziecka to jedno z najtrudniejszych doświadczeń, jakie może przeżyć rodzina. Zostawienie po sobie tak młodej istoty jest ogromnym smutkiem i stratą dla bliskich. Nagrobek dla dziecka to symboliczne miejsce, w którym można oddać hołd i uczcić pamięć o nieżyjącym bliskim.',
+        quote:
+          'Pełno nas, a jakoby nikogo nie było. Jedną maluczką duszą tak wiele ubyło.',
+        quoteAuthor: 'Jan Kochanowski',
+        icons: [
+          {
+            id: 0,
+            title: 'Trwałość',
+            src: 'svg-hammer',
+          },
+          {
+            id: 1,
+            title: 'Elegancja',
+            src: 'svg-landmark',
+          },
+          {
+            id: 2,
+            title: 'Łatwość w czyszczeniu',
+            src: 'svg-wand',
+          },
+          {
+            id: 3,
+            title: 'Odporność na warunki atmosferyczne',
+            src: 'svg-thermometer',
+          },
+        ],
+        headerImage: {
+          src: '/main_realisations/dzieciece/1.jpg',
+          alt: 'Zdjęcie przedstawiające schody z kamienia.',
+        },
+      },
+
+      section: {
+        title: 'Jak dobrać nagrobek dla dziecka?',
+        content:
+          'Nagrobek dla dziecka powinien być przede wszystkim delikatny i subtelny. Zwykle wykonuje się go z jasnego kamienia lub marmuru, aby podkreślić niewinność i czystość dziecka. Dodatkowo, na nagrobku często umieszcza się motywy związane z dzieciństwem, takie jak motyle, ptaki czy kwiaty. Mogą one symbolizować piękno i ulotność życia.',
+        bulletTitle: '',
+        bullets: [
+          {
+            id: 0,
+            title: '',
+            content:
+              'Na nagrobku dla dziecka warto umieścić również inskrypcję z imieniem i datą urodzenia oraz śmierci dziecka. Można dodać również sentencję, wiersz lub krótki tekst upamiętniający zmarłego. Warto zadbać o odpowiednią czcionkę i kolor napisu, aby było ono czytelne i estetyczne.',
+          },
+          {
+            id: 1,
+            title: '',
+            content:
+              'Nagrobek dla dziecka to ważne miejsce, które umożliwia bliskim zmarłego dziecka złożenie hołdu i uczczenie jego pamięci. Warto zadbać o to, aby był on wykonany zgodnie z indywidualnymi preferencjami rodziny oraz aby przede wszystkim oddawał charakter i osobowość zmarłego dziecka.',
+          },
+        ],
+        sectionImage: '/main_realisations/dzieciece/2.jpg',
+      },
+    },
   ],
 })
 export const mutations = {
