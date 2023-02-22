@@ -103,7 +103,7 @@
       </div>
     </section>
     <section class="aboutus">
-      <div class="entry-section-content-about">
+      <div class="entry-section-content-about" id="o-firmie">
         <p class="sub-title-about">O firmie</p>
         <p class="title-about">Kilka słów o naszej działalności</p>
         <p class="text-about">

@@ -18,8 +18,8 @@
       </p>
     </header>
     <section class="realisations-grid">
-      <h2>Blaty z kamienia</h2>
-      <div id="blaty-z-kamienia" class="grid">
+      <div ref="blatyZKamienia" id="blaty-z-kamienia" class="grid">
+        <h2 ref="title1">Blaty z kamienia</h2>
         <nuxt-img
           v-for="blat in blaty"
           :key="blat.id"
@@ -29,8 +29,8 @@
         />
       </div>
 
-      <h2>Schody z kamienia</h2>
       <div id="schody-z-kamienia" class="grid">
+        <h2 ref="title2">Schody z kamienia</h2>
         <nuxt-img
           v-for="schody in schodyArr"
           :key="schody.id"
@@ -40,8 +40,8 @@
         />
       </div>
 
-      <h2>Nagrobki pojedyńcze</h2>
       <div id="nagrobki-pojedyncze" class="grid">
+        <h2 ref="title3">Nagrobki pojedyńcze</h2>
         <nuxt-img
           v-for="nagrobki in nagrobkiPojedyncze"
           :key="nagrobki.id"
@@ -51,8 +51,8 @@
         />
       </div>
 
-      <h2>Nagrobki podwójne</h2>
       <div id="nagrobki-podwojne" class="grid">
+        <h2 ref="title3">Nagrobki podwójne</h2>
         <nuxt-img
           v-for="nagrobki in nagrobkiPodwojne"
           :key="nagrobki.id"
@@ -62,8 +62,8 @@
         />
       </div>
 
-      <h2>Nagrobki dziecięce</h2>
       <div id="nagrobki-dzieciece" class="grid">
+        <h2 ref="title4">Nagrobki dziecięce</h2>
         <nuxt-img
           v-for="nagrobki in nagrobkiDzieciece"
           :key="nagrobki.id"
@@ -81,6 +81,7 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
+      tl: this.$gsap.timeline({ paused: true }),
       images: [
         {
           id: 0,
@@ -95,6 +96,26 @@ export default {
         {
           id: 2,
           src: '/main_realisations/schody/3.jpeg',
+          alt: 'Zdjęcie przedstawiające nagrobek',
+        },
+        {
+          id: 3,
+          src: '/main_realisations/podwojne/3.jpg',
+          alt: 'Zdjęcie przedstawiające nagrobek',
+        },
+        {
+          id: 4,
+          src: '/main_realisations/podwojne/5.jpg',
+          alt: 'Zdjęcie przedstawiające nagrobek',
+        },
+        {
+          id: 5,
+          src: '/main_realisations/pojedyncze/5.jpg',
+          alt: 'Zdjęcie przedstawiające nagrobek',
+        },
+        {
+          id: 6,
+          src: '/main_realisations/dzieciece/2.jpg',
           alt: 'Zdjęcie przedstawiające nagrobek',
         },
       ],
@@ -151,15 +172,53 @@ header {
 }
 .grid {
   width: 100%;
+  position: relative;
   img {
     width: 100%;
   }
 }
+h2 {
+  font-size: 40px;
+  color: #1e3455;
+  background: rgba(255, 255, 255, 0.712);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 32px;
+}
+@media (min-width: 744px) {
+  .single-image {
+    &:nth-child(1) {
+      margin-top: -80px;
+    }
+    &:nth-child(2) {
+      margin-top: -40px;
+    }
+    &:nth-child(3) {
+      margin-top: 0;
+    }
+    &:nth-child(4) {
+      margin-top: 40px;
+    }
+    &:nth-child(5) {
+      margin-top: 0;
+    }
+    &:nth-child(6) {
+      margin-top: -40px;
+    }
+    &:nth-child(7) {
+      margin-top: -80px;
+    }
+  }
+}
 @media (min-width: 1280px) {
-  h2 {
+  .title {
     font-size: 80px;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.848);
+    margin-top: 60px;
+  }
+  .header-text {
+    width: 500px;
   }
 }
 </style>

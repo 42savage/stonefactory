@@ -36,4 +36,9 @@ export default {
   build: {
     postcss: null,
   },
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true,
+    },
+  },
 }

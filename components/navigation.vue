@@ -30,7 +30,7 @@
         </li>
         <li class="single-link">
           <nuxt-link
-            to="/o-firmie"
+            to="/#o-firmie"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
             aria-label="Przejdź na stronę o firmie"

@@ -1,5 +1,5 @@
 <template>
-  <div id="main">
+  <div :class="{ main: this.$route.name !== 'realizacje' }">
     <contactInfoBar />
     <navigation />
     <Nuxt />
@@ -22,7 +22,7 @@ export default {
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
-#main {
+.main {
   overflow: hidden;
 }
 </style>
