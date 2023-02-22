@@ -8,7 +8,10 @@
         >Sprawdź ofertę</nuxt-link
       >
       <div class="image-slider-wrapper">
-        <div class="image-slider-single-image">
+        <nuxt-link
+          to="oferta/nagrobki-pojedyncze"
+          class="image-slider-single-image"
+        >
           <img
             src="~/static/slider/image1.jpg"
             alt="Zdjęcie przedstawiające schody"
@@ -31,8 +34,11 @@
               ><svg-arrow :width="32" :height="32" /><span>Sprawdź</span>
             </nuxt-link>
           </div>
-        </div>
-        <div class="image-slider-single-image">
+        </nuxt-link>
+        <nuxt-link
+          to="oferta/schody-z-kamienia"
+          class="image-slider-single-image"
+        >
           <!-- <nuxt-img
             class="image-slider-mobile-image"
             src="/slider/image2.jpeg"
@@ -55,7 +61,7 @@
                 ><svg-arrow :color="'#1E3455'" :width="24" :height="24" /></span
             ></nuxt-link>
           </div>
-        </div>
+        </nuxt-link>
       </div>
       <div class="slider-state-wrapper">
         <div class="state active"></div>
@@ -81,10 +87,11 @@
         <p class="text">Stawiamy na klienta i jego zadowolenie.</p>
       </div>
       <div class="offer-grid-wrapper">
-        <div
+        <nuxt-link
           class="single-offer-item"
           v-for="offerItem in offer"
           :key="offerItem.id"
+          :to="offerItem.route.link"
         >
           <div>
             <img
@@ -99,7 +106,7 @@
           <nuxt-link class="item-route" :to="offerItem.route.link"
             ><svg-arrow :color="'black'" :width="16" :height="16" />
           </nuxt-link>
-        </div>
+        </nuxt-link>
       </div>
     </section>
     <section class="aboutus">
@@ -214,9 +221,10 @@
         <p class="sub-title">Tylko zadowoleni Klienci</p>
         <p class="title">Opinie naszych klientów</p>
         <p class="text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-          pellentesque felis arcu, tristique commodo vitae, libero blandit
-          nullam. Libero, pulvinar rutrum commodo
+          Cenimy sobie opinie Klientów i bierzemy je do serca. Jeśli masz jakieś
+          pytania lub wątpliwości, jesteśmy gotowi na nie odpowiedzieć i pomóc
+          Ci w dokonaniu właściwego wyboru. Zapraszamy więc do przeczytania
+          opinii innych klientów i dołączenia do grona zadowolonych klientów.
         </p>
       </div>
       <div class="opinion-grid">
@@ -240,16 +248,15 @@
       </div>
       <div class="call-to-action-wrapper">
         <p class="more-opinions-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-          pellentesque felis arcu, tristique commodo vitae, libero blandit
-          nullam. Libero, pulvinar rutrum commodo leo.
+          Opinie zamieszczone na stronie pochodzą z Map Google.
         </p>
-        <button
+        <a
+          href="https://www.google.com/search?q=lastro+beton+skaryszew&oq=mapy+google+lastro+beton+skaryszew&aqs=chrome..69i57j33i10i160l2.5044j0j7&sourceid=chrome&ie=UTF-8#lrd=0x4718670b5e846963:0x271000285bde5ebc,1,,,,"
           aria-label="Przycisk włączajacy nawigację po stronie"
           class="more-opinions-button"
         >
           Sprawdź opinie
-        </button>
+        </a>
       </div>
     </section>
     <!-- <section class="contact-us">
@@ -362,6 +369,34 @@ export default {
     choseRealisation(parameter) {
       this.choseRealisationCategory(parameter)
     },
+    revealSections() {
+      let sections = this.$gsap.utils.toArray('section')
+      sections.forEach((section) => {
+        this.$gsap.fromTo(
+          section.children,
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            ease: 'easeInOut',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top bottom',
+              // markers: true,
+              toggleActions: 'play pause resume reverse',
+            },
+          }
+        )
+      })
+    },
+  },
+  mounted() {
+    this.revealSections()
   },
 }
 </script>
@@ -381,6 +416,7 @@ export default {
   height: 330px;
   width: 330px;
   position: relative;
+  text-decoration: none;
   img {
     border-radius: 24px;
     box-shadow: 0px 12px 44px 2px rgba(0, 0, 0, 0.25);
@@ -444,7 +480,8 @@ export default {
   text-decoration: none;
 }
 .slider-state-wrapper {
-  display: flex;
+  // display: flex;
+  display: none;
   flex-direction: row;
   align-items: flex-start;
   border-radius: 4px;
@@ -510,6 +547,8 @@ export default {
 .single-offer-item {
   margin: 24px 0;
   position: relative;
+  text-decoration: none;
+  color: #1e3455;
   cursor: pointer;
   div {
     overflow: hidden;
@@ -689,6 +728,7 @@ export default {
   border-radius: 24px;
   margin: 24px 32px 140px 32px;
   font-size: 16px;
+  text-decoration: none;
 }
 
 // .contact-info-grid {

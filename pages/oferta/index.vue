@@ -40,6 +40,36 @@ export default {
       offer: 'offer/getOffer',
     }),
   },
+  methods: {
+    revealSections() {
+      let sections = this.$gsap.utils.toArray('.single-offer')
+      sections.forEach((section) => {
+        this.$gsap.fromTo(
+          section.children,
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            ease: 'easeInOut',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top bottom',
+              // markers: true,
+              toggleActions: 'play pause resume reverse',
+            },
+          }
+        )
+      })
+    },
+  },
+  mounted() {
+    this.revealSections()
+  },
 }
 </script>
 

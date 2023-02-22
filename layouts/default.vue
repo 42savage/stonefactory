@@ -7,12 +7,7 @@
   </div>
 </template>
 
-<script>
-import navigation from '~/components/navigation.vue'
-export default {
-  components: { navigation },
-}
-</script>
+<script></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
