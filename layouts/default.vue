@@ -1,5 +1,6 @@
 <template>
   <div :class="{ main: this.$route.name !== 'realizacje' }">
+    <eneterPageAnimation />
     <contactInfoBar />
     <navigation />
     <Nuxt />

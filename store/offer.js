@@ -35,15 +35,15 @@ export const state = () => ({
       id: 2,
       image: {
         src: require('~/assets/offer/image03.jpg'),
-        alt: 'Zdjęcie przedstawia nagrobek pojedyńczy',
+        alt: 'Zdjęcie przedstawia nagrobek pojedynczy',
       },
       title: 'Wytrzymujący lata',
-      name: 'Nagrobki pojedyńcze',
+      name: 'Nagrobki pojedyncze',
       content:
         'Nagrobek z kamienia to trwały i elegancki wybór na pomnik grobowy. Nasz zakład kamieniarski oferuje szeroki wybór nagrobków z różnych kamieni, takich jak granit, marmur, kwarcyt i inne.',
       route: {
         link: '/oferta/nagrobki-pojedyncze',
-        name: 'nagrobków pojedyńczych',
+        name: 'nagrobków pojedynczych',
       },
     },
     {
@@ -218,11 +218,11 @@ export const state = () => ({
 
     {
       id: 2,
-      route: { link: 'nagrobki-pojedyncze', name: 'nagrobków pojedyńczych' },
+      route: { link: 'nagrobki-pojedyncze', name: 'nagrobków pojedynczych' },
       header: {
-        title: 'Nagrobki pojedyńcze',
+        title: 'Nagrobki pojedyncze',
         content:
-          'W życiu każdego z nas przychodzi moment, w którym musimy zastanowić się nad tym, jak chcemy uczcić pamięć naszych bliskich, którzy odeszli. Nagrobek pojedyńczy jest wyjątkowym i trwałym sposobem na to, aby wiecznie przechować w naszych sercach wspomnienia i miłość do naszych bliskich.',
+          'W życiu każdego z nas przychodzi moment, w którym musimy zastanowić się nad tym, jak chcemy uczcić pamięć naszych bliskich, którzy odeszli. Nagrobek pojedynczy jest wyjątkowym i trwałym sposobem na to, aby wiecznie przechować w naszych sercach wspomnienia i miłość do naszych bliskich.',
         quote: 'Popiołem i cieniem, i wspomnieniem się staniesz.',
         quoteAuthor: 'Persjusz',
         icons: [
@@ -249,16 +249,16 @@ export const state = () => ({
         ],
         headerImage: {
           src: '/main_realisations/pojedyncze/1.jpg',
-          alt: 'Zdjęcie przedstawiające nagrobek pojedyńczy.',
+          alt: 'Zdjęcie przedstawiające nagrobek pojedynczy.',
         },
       },
 
       section: {
         title:
-          'Dlaczego wybrać nagrobek pojedyńczy w naszym zakładzie kamieniarskim?',
+          'Dlaczego wybrać nagrobek pojedynczy w naszym zakładzie kamieniarskim?',
         content:
           'Nagrobki produkowane przez nasz zakład kamieniarski charakteryzują się wysoką jakością i wachlarzem wzorów. Gwarantujemy estetyczny wygląd i trwałość na lata.',
-        bulletTitle: 'Zalety nagrobków pojedyńczych',
+        bulletTitle: 'Zalety nagrobków pojedynczych',
         bullets: [
           {
             id: 0,
@@ -289,7 +289,7 @@ export const state = () => ({
       header: {
         title: 'Schody z kamienia',
         content:
-          'W życiu każdego z nas przychodzi moment, w którym musimy zastanowić się nad tym, jak chcemy uczcić pamięć naszych bliskich, którzy odeszli. Nagrobek pojedyńczy jest wyjątkowym i trwałym sposobem na to, aby wiecznie przechować w naszych sercach wspomnienia i miłość do naszych bliskich.',
+          'W życiu każdego z nas przychodzi moment, w którym musimy zastanowić się nad tym, jak chcemy uczcić pamięć naszych bliskich, którzy odeszli. Nagrobek pojedynczy jest wyjątkowym i trwałym sposobem na to, aby wiecznie przechować w naszych sercach wspomnienia i miłość do naszych bliskich.',
         quote: 'Popiołem i cieniem, i wspomnieniem się staniesz.',
         quoteAuthor: 'Persjusz',
         icons: [

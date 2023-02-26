@@ -4,20 +4,22 @@
       <h1 class="header-title">
         Produkujemy nagrobki, blaty kamienne oraz schody z kamienia
       </h1>
+
       <nuxt-link to="/oferta" class="call-to-action-button"
         >Sprawdź ofertę</nuxt-link
       >
       <div class="image-slider-wrapper">
-        <nuxt-link
-          to="oferta/nagrobki-pojedyncze"
-          class="image-slider-single-image"
-        >
-          <img
-            src="~/static/slider/image1.jpg"
-            alt="Zdjęcie przedstawiające schody"
-            class="image-slider-mobile-image"
-          />
-          <!-- <nuxt-img
+        <client-only>
+          <nuxt-link
+            to="oferta/nagrobki-pojedyncze"
+            class="image-slider-single-image"
+          >
+            <img
+              src="~/static/slider/image1.jpg"
+              alt="Zdjęcie przedstawiające schody"
+              class="image-slider-mobile-image"
+            />
+            <!-- <nuxt-img
             class="image-slider-mobile-image"
             src="/slider/image1.jpg"
             alt="Zdjęcie przedstawiające nagrobek"
@@ -25,43 +27,47 @@
             height="330"
             fit="cover"
           /> -->
-          <div class="slider-image-content">
-            <p class="image-subtitle">
-              Odpowiedni pomnik dla Twojej bliskiej osoby
-            </p>
-            <p class="image-title">Nagrobki pojedyńcze, nagrobki podwójne</p>
-            <nuxt-link class="image-link" to="oferta/nagrobki-pojedyncze"
-              ><svg-arrow :width="32" :height="32" /><span>Sprawdź</span>
-            </nuxt-link>
-          </div>
-        </nuxt-link>
-        <nuxt-link
-          to="oferta/schody-z-kamienia"
-          class="image-slider-single-image"
-        >
-          <!-- <nuxt-img
+            <div class="slider-image-content">
+              <p class="image-subtitle">
+                Odpowiedni pomnik dla Twojej bliskiej osoby
+              </p>
+              <p class="image-title">Nagrobki pojedyncze, nagrobki podwójne</p>
+              <nuxt-link class="image-link" to="oferta/nagrobki-pojedyncze"
+                ><svg-arrow :width="32" :height="32" /><span>Sprawdź</span>
+              </nuxt-link>
+            </div>
+          </nuxt-link>
+          <nuxt-link
+            to="oferta/schody-z-kamienia"
+            class="image-slider-single-image"
+          >
+            <!-- <nuxt-img
             class="image-slider-mobile-image"
             src="/slider/image2.jpeg"
             alt="Zdjęcie przedstawiające schody z marmuru"
             width="290"
             height="276"
           /> -->
-          <img
-            src="~/static/slider/image2.jpg"
-            alt="Zdjęcie przedstawiające schody"
-            class="image-slider-mobile-image"
-          />
-          <div class="image-slider-content-small">
-            <p class="image-slider-content-small-title">Popularny wybór</p>
-            <nuxt-link
-              to="/oferta/schody-z-kamienia"
-              class="image-slider-content-small-link"
-              >Schody z kamienia
-              <span
-                ><svg-arrow :color="'#1E3455'" :width="24" :height="24" /></span
-            ></nuxt-link>
-          </div>
-        </nuxt-link>
+            <img
+              src="~/static/slider/image2.jpg"
+              alt="Zdjęcie przedstawiające schody"
+              class="image-slider-mobile-image"
+            />
+            <div class="image-slider-content-small">
+              <p class="image-slider-content-small-title">Popularny wybór</p>
+              <nuxt-link
+                to="/oferta/schody-z-kamienia"
+                class="image-slider-content-small-link"
+                >Schody z kamienia
+                <span
+                  ><svg-arrow
+                    :color="'#1E3455'"
+                    :width="24"
+                    :height="24" /></span
+              ></nuxt-link>
+            </div>
+          </nuxt-link>
+        </client-only>
       </div>
       <div class="slider-state-wrapper">
         <div class="state active"></div>
@@ -87,26 +93,28 @@
         <p class="text">Stawiamy na klienta i jego zadowolenie.</p>
       </div>
       <div class="offer-grid-wrapper">
-        <nuxt-link
-          class="single-offer-item"
-          v-for="offerItem in offer"
-          :key="offerItem.id"
-          :to="offerItem.route.link"
-        >
-          <div>
-            <img
-              :src="offerItem.image.src"
-              :alt="offerItem.image.alt"
-              class="item-image"
-              loading="lazy"
-            />
-          </div>
-          <p class="item-title">{{ offerItem.title }}</p>
-          <p class="item-name">{{ offerItem.name }}</p>
-          <nuxt-link class="item-route" :to="offerItem.route.link"
-            ><svg-arrow :color="'black'" :width="16" :height="16" />
+        <client-only>
+          <nuxt-link
+            class="single-offer-item"
+            v-for="offerItem in offer"
+            :key="offerItem.id"
+            :to="offerItem.route.link"
+          >
+            <div>
+              <img
+                :src="offerItem.image.src"
+                :alt="offerItem.image.alt"
+                class="item-image"
+                loading="lazy"
+              />
+            </div>
+            <p class="item-title">{{ offerItem.title }}</p>
+            <p class="item-name">{{ offerItem.name }}</p>
+            <nuxt-link class="item-route" :to="offerItem.route.link"
+              ><svg-arrow :color="'black'" :width="16" :height="16" />
+            </nuxt-link>
           </nuxt-link>
-        </nuxt-link>
+        </client-only>
       </div>
     </section>
     <section class="aboutus">
@@ -195,7 +203,7 @@
             Schody z kamienia
           </p>
           <p @click="choseRealisation('nagrobki_pojedyncze')">
-            Nagrobki pojedyńcze
+            Nagrobki pojedyncze
           </p>
           <p @click="choseRealisation('nagrobki_podwojne')">
             Nagrobki podwójne
