@@ -9,7 +9,11 @@
       Lastro-Beton
     </nuxt-link>
     <nav>
-      <ul class="link-wrapper" ref="linkWrapper">
+      <ul
+        :class="{ menuFull: menuState }"
+        class="link-wrapper"
+        ref="linkWrapper"
+      >
         <li class="single-link">
           <nuxt-link
             to="/"
@@ -78,19 +82,55 @@
 
 <script>
 export default {
+  data() {
+    return {
+      tl: this.$gsap.timeline({ paused: true }),
+      menuState: false,
+    }
+  },
   methods: {
     toggleNavigation() {
-      console.log(this.tl)
+      this.tl.to(this.$refs.linkWrapper, {
+        duration: 0.3,
+        ease: 'easeInOut',
+        x: 0,
+        display: 'flex',
+      })
+
+      if (this.menuState === false) {
+        this.tl.play()
+        this.menuState = true
+      } else {
+        this.tl.reverse()
+        this.menuState = false
+      }
     },
-  },
-  mounted() {
-    this.tl = this.$gsap.timeline()
-    console.log(this.$route)
   },
 }
 </script>
 
 <style scoped lang="scss">
+.menuFull {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #0a1321bb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  li {
+    list-style-type: none;
+    margin: 8px 0;
+  }
+  a {
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+  }
+}
 .lightText {
   color: white !important;
 }
@@ -118,6 +158,8 @@ export default {
 .toggle-navigation {
   background: none;
   border: none;
+  z-index: 11;
+  position: relative;
 }
 .line {
   width: 36px;
@@ -134,6 +176,7 @@ export default {
   margin-left: 16px;
   font-weight: bold;
   text-decoration: none;
+  z-index: 11;
   &::after {
     content: '';
     position: absolute;

@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     setImage(data) {
-      console.log(data)
       this.currentImage = data
     },
   },
@@ -57,7 +56,6 @@ export default {
           iteratonSpeed -= 100
         }
         if (index < arr.length - 1) {
-          console.log(index, iteratonSpeed)
           index += 1
         } else if (index === arr.length - 1) {
           index = 0

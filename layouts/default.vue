@@ -1,14 +1,13 @@
 <template>
   <div :class="{ main: this.$route.name !== 'realizacje' }">
-    <eneterPageAnimation />
+    <courtain class="courtain" />
+    <!-- <eneterPageAnimation /> -->
     <contactInfoBar />
     <navigation />
     <Nuxt />
     <TheFooter />
   </div>
 </template>
-
-<script></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -20,5 +19,12 @@
 }
 .main {
   overflow: hidden;
+}
+.courtain {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 </style>

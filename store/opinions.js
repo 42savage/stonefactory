@@ -2,16 +2,23 @@ export const state = () => ({
   opinionList: [
     {
       id: 0,
-      name: 'Anna Nowak',
+      name: 'Aleksandra Maziarz',
       content:
-        'Kompleksowa obsługa, profesjonalne doradzwo i pomoc przy doborze materiałów. Polecam współpracę z tą firmą.',
+        'Serdecznie polecam, bardzo wysoka jakość, miły kontakt z klientem, szybko, sprawnie i bardzo dokładnie!',
       stars: 5,
     },
     {
       id: 1,
-      name: 'Danuta Sabat',
+      name: 'Karol O',
       content:
-        'Sprawna realizacja zamówienia i profesjonalna obsługa, to jest to czego potrzebowałam w tej trudnej chwili.',
+        'Bardzo profesjonalnie świadczone usługi, dobry kontakt pracownika z klientem, a przede wszystkim solidnie i sprawnie wykonane zlecenie. Polecam!',
+      stars: 5,
+    },
+    {
+      id: 2,
+      name: 'Natalia Dziok',
+      content:
+        'Firma godna polecenia, super obsługa, pełen profesjonalizm.  Serdecznie polecam!',
       stars: 5,
     },
   ],

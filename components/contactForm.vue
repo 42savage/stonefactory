@@ -9,7 +9,7 @@
           skontaktować z nami. Chętnie odpowiemy na wszelkie pytania i pomożemy
           Ci wybrać najlepsze rozwiązanie. Nasz zespół jest do Twojej dyspozycji
           od poniedziałku do piątku w godzinach
-          <b>od 9:00 do 17:00.</b>
+          <b>od 7:00 do 19:00.</b>
         </p>
       </div>
       <div class="contact-info-grid">

@@ -41,4 +41,51 @@ export default {
       scrollTrigger: true,
     },
   },
+  pageTransition: {
+    name: 'my-page',
+    mode: 'out-in',
+    beforeEnter(el) {
+      this.$gsap.set([el, '.main-navigation'], {
+        opacity: 0,
+      })
+      let tl = this.$gsap.timeline({ paused: true })
+      tl.fromTo(
+        '.courtain',
+        {
+          display: 'none',
+        },
+        {
+          display: 'flex',
+        }
+      )
+        .fromTo(
+          '.first',
+          {
+            yPercent: 0,
+          },
+          {
+            yPercent: -100,
+            ease: 'power3.inOut',
+          },
+          'same'
+        )
+        .to(
+          '.courtain',
+          {
+            display: 'none',
+          },
+          'same'
+        )
+        .set(
+          [el, '.main-navigation'],
+          {
+            opacity: 1,
+          },
+          '<'
+        )
+
+      tl.play()
+    },
+    enter(el) {},
+  },
 }

@@ -19,14 +19,6 @@
               alt="Zdjęcie przedstawiające schody"
               class="image-slider-mobile-image"
             />
-            <!-- <nuxt-img
-            class="image-slider-mobile-image"
-            src="/slider/image1.jpg"
-            alt="Zdjęcie przedstawiające nagrobek"
-            width="330"
-            height="330"
-            fit="cover"
-          /> -->
             <div class="slider-image-content">
               <p class="image-subtitle">
                 Odpowiedni pomnik dla Twojej bliskiej osoby
@@ -41,13 +33,6 @@
             to="oferta/schody-z-kamienia"
             class="image-slider-single-image"
           >
-            <!-- <nuxt-img
-            class="image-slider-mobile-image"
-            src="/slider/image2.jpeg"
-            alt="Zdjęcie przedstawiające schody z marmuru"
-            width="290"
-            height="276"
-          /> -->
             <img
               src="~/static/slider/image2.jpg"
               alt="Zdjęcie przedstawiające schody"
@@ -78,12 +63,6 @@
         :quoteContent="'Widziałem anioła w marmurze i rzeźbiłem, dopóki go nie uwolniłem.'"
         :quoteAuthor="'~Michał Anioł'"
       />
-      <!-- <div class="quote-wrapper">
-        <p class="quote">
-          Widziałem anioła w marmurze i rzeźbiłem, dopóki go nie uwolniłem.
-        </p>
-        <p class="quote-author">~Michał Anioł</p>
-      </div> -->
     </header>
     <section class="offer">
       <div class="entry-section-content">
@@ -182,7 +161,7 @@
         </div>
       </div>
       <div class="statistics">
-        <p><span class="featured">5 lat</span> doświadczenia</p>
+        <p><span class="featured">+30 lat</span> doświadczenia</p>
         <p><span class="featured">+200</span> Projektów</p>
         <p><span class="featured">+200</span> Zadowolonych klientów</p>
       </div>
@@ -198,17 +177,42 @@
       </div>
       <div class="realisations-wrapper">
         <div class="category-wrapper">
-          <p @click="choseRealisation('blaty_z_kamienia')">Blaty z kamienia</p>
-          <p @click="choseRealisation('schody_z_kamienia')">
+          <p
+            :class="{ chosen: realisations[0].category === 'blaty_z_kamienia' }"
+            @click="choseRealisation('blaty_z_kamienia')"
+          >
+            Blaty z kamienia
+          </p>
+          <p
+            :class="{
+              chosen: realisations[0].category === 'schody_z_kamienia',
+            }"
+            @click="choseRealisation('schody_z_kamienia')"
+          >
             Schody z kamienia
           </p>
-          <p @click="choseRealisation('nagrobki_pojedyncze')">
+          <p
+            :class="{
+              chosen: realisations[0].category === 'nagrobki_pojedyncze',
+            }"
+            @click="choseRealisation('nagrobki_pojedyncze')"
+          >
             Nagrobki pojedyncze
           </p>
-          <p @click="choseRealisation('nagrobki_podwojne')">
+          <p
+            :class="{
+              chosen: realisations[0].category === 'nagrobki_podwojne',
+            }"
+            @click="choseRealisation('nagrobki_podwojne')"
+          >
             Nagrobki podwójne
           </p>
-          <p @click="choseRealisation('nagrobki_dzieciece')">
+          <p
+            :class="{
+              chosen: realisations[0].category === 'nagrobki_dzieciece',
+            }"
+            @click="choseRealisation('nagrobki_dzieciece')"
+          >
             Nagrobki dziecięce
           </p>
         </div>
@@ -267,94 +271,6 @@
         </a>
       </div>
     </section>
-    <!-- <section class="contact-us">
-      <div>
-        <div class="entry-section-content">
-          <p class="sub-title">Przedstaw nam swoje oczekiwania</p>
-          <p class="title">Skontaktuj się z nami</p>
-          <p class="text">
-            Jeśli masz jakiekolwiek pytania lub wątpliwości, nie wahaj się
-            skontaktować z nami. Chętnie odpowiemy na wszelkie pytania i
-            pomożemy Ci wybrać najlepsze rozwiązanie. Nasz zespół jest do Twojej
-            dyspozycji od poniedziałku do piątku w godzinach
-            <b>od 9:00 do 17:00.</b>
-          </p>
-        </div>
-        <div class="contact-info-grid">
-          <div class="adress">
-            <svg-map-pin />
-            <p class="adress-title"><b>Lastro-Beton</b></p>
-            <p class="adress-content">Juliusza Słowackiego 31</p>
-            <p class="adress-content">26-640 Skaryszew</p>
-          </div>
-          <div class="phone">
-            <svg-phone />
-            <p class="phone-content">+48 502-439-989</p>
-            <p class="phone-conten">+48 512-188-034</p>
-          </div>
-          <div class="email">
-            <svg-mail />
-            <p class="email-content">pawel.dzieniak@onet.pl</p>
-            <p class="email-content">kontakt@kamieniarstwobeton.pl</p>
-          </div>
-        </div>
-        <form>
-          <div>
-            <label for="name">Imię i Nazwisko</label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Jan Kowalski"
-            />
-          </div>
-          <div>
-            <label for="email">Adres email</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="jankowalski@poczta.pl"
-            />
-          </div>
-          <div>
-            <label for="company">Nazwa firmy</label>
-            <input
-              type="text"
-              name="company"
-              id="company"
-              placeholder="Opcjonalnie"
-            />
-          </div>
-          <div>
-            <label for="cars">Temat zapytania:</label>
-            <select name="subject" id="subject">
-              <option value="schody_z_kamienia">Schody z kamienia</option>
-              <option value="blaty_z_kamienia">Blaty z kamienia</option>
-              <option value="nagrobek_pojedynczy">Nagrobek pojedyńczy</option>
-              <option value="nagrobek_podwojny">Nagrobek podwójny</option>
-              <option value="nagrobek_dzieciecy">Nagrobek dziecięcy</option>
-              <option value="pomnik">Pomnik</option>
-            </select>
-          </div>
-          <div>
-            <label for="message">Wiadomość</label>
-            <textarea name="message">Wprowadź tekst zapytania</textarea>
-            <button class="form-send-message">
-              Wyślij zapytanie <svg-button-arrow />
-            </button>
-          </div>
-        </form>
-      </div>
-      <iframe
-        class="map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d844.3046849291316!2d21.247554778976507!3d51.31512823066229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718670b5e846963%3A0x271000285bde5ebc!2sLASTRO-BETON%20ZAK%C5%81AD%20KAMIENIARSKI!5e0!3m2!1spl!2snl!4v1672865956760!5m2!1spl!2snl"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </section> -->
     <contactForm />
   </div>
 </template>
@@ -409,6 +325,9 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.chosen {
+  font-weight: bold;
+}
 .image-slider-wrapper {
   display: flex;
   flex-direction: row;
