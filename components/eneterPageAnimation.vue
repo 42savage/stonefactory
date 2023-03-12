@@ -69,9 +69,6 @@ export default {
       .to(
         this.$refs.logoImage,
         {
-          y: -332,
-          x: -50,
-          scale: 0.2,
           delay: 3,
           duration: 0.6,
           ease: 'power4.in',
@@ -81,10 +78,7 @@ export default {
       .to(
         this.$refs.logoText,
         {
-          y: -330,
           delay: 3,
-          x: -136,
-          scale: 0.6,
           duration: 0.6,
           ease: 'power4.in',
         },
