@@ -1,30 +1,30 @@
 <template>
   <div class="main-navigation">
     <nuxt-link
+      @click.native="toggleNavigation('logo')"
       to="/"
       class="logo"
-      :class="{ lightText: this.$route.name === 'oferta' }"
+      :class="{ lightText: this.$route.name === 'oferta' || menuState }"
       aria-label="Przejdź na stronę główną"
+      ref="logo"
     >
       Lastro-Beton
     </nuxt-link>
     <nav>
-      <ul
-        :class="{ menuFull: menuState }"
-        class="link-wrapper"
-        ref="linkWrapper"
-      >
+      <ul class="link-wrapper" ref="linkWrapper">
         <li class="single-link">
           <nuxt-link
             to="/"
             class="link"
             aria-label="Przejdź na stronę główną"
             :class="{ lightText: this.$route.name === 'oferta' }"
+            @click.native="toggleNavigation('link')"
             >Strona główna</nuxt-link
           >
         </li>
         <li class="single-link">
           <nuxt-link
+            @click.native="toggleNavigation('link')"
             to="/oferta"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
@@ -34,6 +34,7 @@
         </li>
         <li class="single-link">
           <nuxt-link
+            @click.native="toggleNavigation('link')"
             to="/#o-firmie"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
@@ -43,6 +44,7 @@
         </li>
         <li class="single-link">
           <nuxt-link
+            @click.native="toggleNavigation('link')"
             to="/realizacje"
             class="link"
             :class="{ lightText: this.$route.name === 'oferta' }"
@@ -52,6 +54,7 @@
         </li>
         <li class="single-link contact-link-mobile">
           <nuxt-link
+            @click.native="toggleNavigation('link')"
             to="/#kontakt"
             aria-label="Skorzystaj z formularza kontaktowego"
             class="link"
@@ -60,6 +63,7 @@
         </li>
         <li class="single-link contact-link-desktop">
           <nuxt-link
+            @click.native="toggleNavigation('link')"
             aria-label="Skorzystaj z formularza kontaktowego"
             to="/#kontakt"
             class="link"
@@ -68,9 +72,10 @@
         </li>
       </ul>
       <button
-        :class="{ lightMenu: this.$route.name === 'oferta' }"
+        :class="{ lightMenu: this.$route.name === 'oferta' || menuState }"
         class="toggle-navigation"
         @click="toggleNavigation"
+        ref="hamburger"
       >
         <div class="line"></div>
         <div class="line"></div>
@@ -88,21 +93,78 @@ export default {
       menuState: false,
     }
   },
+  mounted() {
+    if (this.$mq !== 'lg') {
+      this.tl
+        .fromTo(
+          this.$refs.linkWrapper,
+          {
+            xPercent: -100,
+            display: 'none',
+          },
+          {
+            xPercent: 0,
+            display: 'flex',
+          },
+          'same'
+        )
+        .fromTo(
+          this.$refs.linkWrapper.children,
+          {
+            y: 60,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.1,
+          },
+          'same'
+        )
+        .to(
+          this.$refs.hamburger.children[1],
+          {
+            width: 0,
+            opacity: 0,
+          },
+          'same'
+        )
+        .to(
+          this.$refs.hamburger.children[0],
+          {
+            rotate: 45,
+            y: 8,
+          },
+          'same'
+        )
+        .to(
+          this.$refs.hamburger.children[2],
+          {
+            rotate: -45,
+            y: -8,
+          },
+          'same'
+        )
+        .to(document.body, {
+          overflow: 'hidden',
+        })
+    }
+  },
   methods: {
-    toggleNavigation() {
-      this.tl.to(this.$refs.linkWrapper, {
-        duration: 0.3,
-        ease: 'easeInOut',
-        x: 0,
-        display: 'flex',
-      })
-
-      if (this.menuState === false) {
-        this.tl.play()
+    toggleNavigation(payload) {
+      if (!this.menuState && payload !== 'logo') {
         this.menuState = true
       } else {
-        this.tl.reverse()
         this.menuState = false
+      }
+    },
+  },
+  watch: {
+    menuState: function (value) {
+      if (value) {
+        this.tl.play()
+      } else {
+        this.tl.reverse()
       }
     },
   },
@@ -110,29 +172,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.menuFull {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: #0a1321bb;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  li {
-    list-style-type: none;
-    margin: 8px 0;
-  }
-  a {
-    color: white;
-    font-size: 40px;
-    text-decoration: none;
-  }
-}
 .lightText {
   color: white !important;
+  &::after {
+    background: white !important;
+  }
 }
 .lightMenu {
   div {
@@ -154,12 +198,33 @@ export default {
 .link-wrapper {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #0a1321;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  li {
+    list-style-type: none;
+    margin: 8px 0;
+  }
+  a {
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+  }
 }
 .toggle-navigation {
   background: none;
   border: none;
   z-index: 11;
   position: relative;
+  div {
+    transition: 0.8s;
+  }
 }
 .line {
   width: 36px;
@@ -177,6 +242,7 @@ export default {
   font-weight: bold;
   text-decoration: none;
   z-index: 11;
+  transition: 0.8s;
   &::after {
     content: '';
     position: absolute;
@@ -185,6 +251,7 @@ export default {
     background: #1e3455;
     width: 8px;
     height: 100%;
+    transition: 0.8s;
   }
 }
 
@@ -222,12 +289,17 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: initial;
+    height: initial;
+    background: initial;
+    position: initial;
     li {
       list-style-type: none;
       margin: 0 28px;
       a {
         text-decoration: none;
         color: #787878;
+        font-size: 16px;
         &:hover {
           color: #1e3455;
         }
