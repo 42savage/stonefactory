@@ -65,6 +65,11 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
+  head() {
+    return {
+      title: `${this.currentPage.header.title} - Lastro-Beton`,
+    }
+  },
   methods: {
     ...mapActions({ setCurrentPage: 'offer/setCurrentPage' }),
   },

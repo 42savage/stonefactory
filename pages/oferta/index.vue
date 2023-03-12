@@ -47,6 +47,11 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  head() {
+    return {
+      title: 'Oferta - Lastro-Beton',
+    }
+  },
   computed: {
     ...mapGetters({
       offer: 'offer/getOffer',

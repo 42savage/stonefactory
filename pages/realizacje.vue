@@ -10,7 +10,6 @@
           :key="image.id"
           :src="image.src"
           :alt="image.alt"
-          placeholder
         />
       </div>
       <p class="header-text">
@@ -85,6 +84,11 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  head() {
+    return {
+      title: 'Realizacje - Lastro-Beton',
+    }
+  },
   data() {
     return {
       tl: this.$gsap.timeline({ paused: true }),

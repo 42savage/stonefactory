@@ -1,7 +1,9 @@
 <template>
   <div class="wrapper">
     <header>
-      <h1 class="header-title">Produkujemy nagrobki, blaty oraz schody.</h1>
+      <h1 class="header-title">
+        Produkujemy nagrobki, pomniki, blaty oraz schody.
+      </h1>
 
       <nuxt-link to="/oferta" class="call-to-action-button"
         >Sprawdź ofertę</nuxt-link
