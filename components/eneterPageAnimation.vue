@@ -114,7 +114,7 @@ export default {
   top: 0;
   left: 0;
   background: rgb(245, 245, 245);
-  z-index: 9;
+  z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;

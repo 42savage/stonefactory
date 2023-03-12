@@ -221,10 +221,13 @@
             :src="realisation.src"
             :alt="realisation.alt"
             placeholder
-            width="360"
+            width="240"
           />
         </div>
       </div>
+      <nuxt-link class="call-to-action-button" to="/realizacje"
+        >Przejdź do realizacji</nuxt-link
+      >
     </section>
     <section class="opinions">
       <div class="entry-section-content">
@@ -594,11 +597,14 @@ header {
     }
   }
 }
+.realisations-wrapper {
+  margin-bottom: 16px;
+}
 .realisations-images-grid {
   padding: 32px;
   overflow: scroll;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   img {
     margin: 8px;
     border-radius: 24px;
@@ -972,6 +978,7 @@ header {
     grid-gap: 16px;
     margin: 0 40px;
   }
+
   .opinions {
     background: #f8f8f8;
     border-radius: 24px;
