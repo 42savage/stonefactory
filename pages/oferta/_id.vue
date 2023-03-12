@@ -20,6 +20,7 @@
         </div>
       </div>
       <nuxt-img
+        draggable="false"
         class="header-image"
         :src="currentPage.header.headerImage.src"
         :alt="currentPage.header.headerImage.alt"
@@ -31,6 +32,7 @@
       <p class="section-content">{{ currentPage.section.content }}</p>
       <div>
         <nuxt-img
+          draggable="false"
           class="section-image"
           :src="currentPage.section.sectionImage"
         />

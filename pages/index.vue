@@ -13,6 +13,7 @@
             class="image-slider-single-image"
           >
             <img
+              draggable="false"
               src="~/static/slider/image1.jpg"
               alt="Zdjęcie przedstawiające schody"
               class="image-slider-mobile-image"
@@ -32,6 +33,7 @@
             class="image-slider-single-image"
           >
             <img
+              draggable="false"
               src="~/static/slider/image2.jpg"
               alt="Zdjęcie przedstawiające schody"
               class="image-slider-mobile-image"
@@ -44,7 +46,12 @@
                 >Schody z kamienia
                 <span
                   ><svg-arrow
+                    class="dark"
                     :color="'#1E3455'"
+                    :width="24"
+                    :height="24" /><svg-arrow
+                    class="white"
+                    :color="'white'"
                     :width="24"
                     :height="24" /></span
               ></nuxt-link>
@@ -79,6 +86,7 @@
           >
             <div>
               <img
+                draggable="false"
                 :src="offerItem.image.src"
                 :alt="offerItem.image.alt"
                 class="item-image"
@@ -216,6 +224,7 @@
         </div>
         <div class="realisations-images-grid">
           <nuxt-img
+            draggable="false"
             v-for="realisation in realisations"
             :key="realisation.id"
             :src="realisation.src"
@@ -353,11 +362,37 @@ header {
     box-shadow: 0px 12px 44px 2px rgba(0, 0, 0, 0.25);
     height: 330px;
     width: 330px;
+    transition: 0.3s;
+  }
+  .image-link {
+    transition: 0.3s;
+  }
+  &:hover > div > .image-link {
+    background: #1e3455;
+    color: white;
+  }
+  &:hover > img {
+    scale: 1.01;
   }
 }
 .image-slider-single-image:nth-child(2) {
+  &:hover > div > a > span {
+    background: #1e3455;
+  }
+  &:hover > div > a > span > .dark {
+    display: none;
+  }
+  &:hover > div > a > span > .white {
+    display: initial;
+  }
   width: 290px;
   position: relative;
+}
+.white {
+  display: none;
+}
+.dark {
+  display: none;
 }
 .slider-image-content {
   position: absolute;
@@ -404,11 +439,15 @@ header {
 .call-to-action-button {
   padding: 8px 24px;
   background: #1e3455;
-  color: #c9e8ff;
+  color: white;
   font-size: 16px;
   margin: 0 32px;
   border-radius: 24px;
   text-decoration: none;
+  transition: 0.3s;
+  &:hover {
+    background: #15253d;
+  }
 }
 .slider-state-wrapper {
   // display: flex;
@@ -479,6 +518,7 @@ header {
   margin: 24px 0;
   position: relative;
   text-decoration: none;
+
   color: #1e3455;
   cursor: pointer;
   div {
@@ -489,6 +529,8 @@ header {
   img {
     transition: transform 1s, filter 1s ease-in-out;
     filter: brightness(110%);
+    width: 300px;
+    height: 300px;
   }
   &:hover > div > img {
     filter: brightness(100%);
@@ -738,6 +780,9 @@ header {
     img {
       width: 442px;
     }
+  }
+  .dark {
+    display: initial;
   }
   .image-link svg {
     display: none;

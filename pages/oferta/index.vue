@@ -15,7 +15,7 @@
     <section class="offer-content-wrapper">
       <div class="single-offer" v-for="item in offer" :key="item.id">
         <div class="first-half">
-          <img :src="item.image.src" :alt="item.image.alt" />
+          <img :src="item.image.src" draggable="false" :alt="item.image.alt" />
         </div>
         <div class="sec-half">
           <p class="offer-title">{{ item.title }}</p>
@@ -23,7 +23,19 @@
           <p class="offer-content">{{ item.content }}</p>
           <nuxt-link class="offer-route" :to="item.route.link"
             >Przejdź do {{ item.route.name }}
-            <div><svg-arrow :color="'black'" :width="16" :height="16" /></div>
+            <div>
+              <svg-arrow
+                class="black"
+                :color="'black'"
+                :width="16"
+                :height="16"
+              /><svg-arrow
+                class="white"
+                :color="'white'"
+                :width="16"
+                :height="16"
+              />
+            </div>
           </nuxt-link>
         </div>
       </div>
@@ -137,6 +149,7 @@ header {
   text-decoration: none;
   position: relative;
   color: #1e3455;
+  transition: 0.3s;
   div {
     border: 1px solid #aaaaaa;
     border-radius: 50%;
@@ -150,6 +163,21 @@ header {
     top: 50%;
     transform: translate(50%, -50%);
   }
+  &:hover {
+    text-shadow: 0px 0px 1px black;
+  }
+  &:hover > div {
+    background: #1e3455;
+  }
+  &:hover > div > .black {
+    display: none;
+  }
+  &:hover > div > .white {
+    display: initial;
+  }
+}
+.white {
+  display: none;
 }
 @media (min-width: 740px) {
   .content {

@@ -4,6 +4,7 @@
       <h1 class="title">Realizacje</h1>
       <div class="image-carousel">
         <nuxt-img
+          draggable="false"
           class="single-image"
           v-for="image in images"
           :key="image.id"
@@ -21,6 +22,7 @@
       <div ref="blatyZKamienia" id="blaty-z-kamienia" class="grid">
         <h2 ref="title1">Blaty z kamienia</h2>
         <nuxt-img
+          draggable="false"
           v-for="blat in blaty"
           :key="blat.id"
           :alt="blat.alt"
@@ -32,6 +34,7 @@
       <div id="schody-z-kamienia" class="grid">
         <h2 ref="title2">Schody z kamienia</h2>
         <nuxt-img
+          draggable="false"
           v-for="schody in schodyArr"
           :key="schody.id"
           :alt="schody.alt"
@@ -43,6 +46,7 @@
       <div id="nagrobki-pojedyncze" class="grid">
         <h2 ref="title3">Nagrobki pojedyńcze</h2>
         <nuxt-img
+          draggable="false"
           v-for="nagrobki in nagrobkiPojedyncze"
           :key="nagrobki.id"
           :alt="nagrobki.alt"
@@ -54,6 +58,7 @@
       <div id="nagrobki-podwojne" class="grid">
         <h2 ref="title3">Nagrobki podwójne</h2>
         <nuxt-img
+          draggable="false"
           v-for="nagrobki in nagrobkiPodwojne"
           :key="nagrobki.id"
           :alt="nagrobki.alt"
@@ -65,6 +70,7 @@
       <div id="nagrobki-dzieciece" class="grid">
         <h2 ref="title4">Nagrobki dziecięce</h2>
         <nuxt-img
+          draggable="false"
           v-for="nagrobki in nagrobkiDzieciece"
           :key="nagrobki.id"
           :alt="nagrobki.alt"

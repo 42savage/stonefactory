@@ -1,7 +1,7 @@
 <template>
   <div :class="{ main: this.$route.name !== 'realizacje' }">
     <courtain class="courtain" />
-    <eneterPageAnimation />
+    <!-- <eneterPageAnimation /> -->
     <contactInfoBar />
     <navigation />
     <Nuxt />
