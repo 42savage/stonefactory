@@ -1,3 +1,4 @@
+require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -27,7 +28,7 @@ export default {
   //   host: '0.0.0.0',
   // },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['nuxt-gsap-module'],
+  buildModules: ['nuxt-gsap-module', '@nuxtjs/dotenv'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxt/image', 'nuxt-mq'],

@@ -9,8 +9,8 @@
       <a href="mailto:pawel.dzieniak@onet.pl" class="email-content"
         >pawel.dzieniak@onet.pl</a
       >
-      <a href="mailto:kontakt@kamieniarstwobeton.pl" class="email-content"
-        >kontakt@kamieniarstwobeton.pl</a
+      <a href="mailto:kontakt@lastrobeton.pl" class="email-content"
+        >kontakt@lastrobeton.pl</a
       >
     </div>
     <div class="phone">

@@ -13,6 +13,7 @@
     "lintfix": "prettier --write --list-different ."
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
     "nuxt-mq": "^3.0.0",

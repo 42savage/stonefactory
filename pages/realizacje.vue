@@ -178,7 +178,7 @@ header {
   }
 }
 h2 {
-  font-size: 40px;
+  font-size: 24px;
   color: #1e3455;
   background: rgba(255, 255, 255, 0.712);
   width: 100%;
@@ -188,6 +188,9 @@ h2 {
   padding: 32px;
 }
 @media (min-width: 744px) {
+  h2 {
+    font-size: 40px;
+  }
   .single-image {
     &:nth-child(1) {
       margin-top: -80px;

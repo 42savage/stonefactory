@@ -21,22 +21,27 @@
         </div>
         <div class="phone">
           <svg-phone />
-          <p class="phone-content">+48 502-439-989</p>
-          <p class="phone-conten">+48 512-188-034</p>
+          <a href="tel:+48502439989" class="phone-content">+48 502-439-989</a>
+          <a href="tel:+48512188034" class="phone-content">+48 512-188-034</a>
         </div>
         <div class="email">
           <svg-mail />
-          <p class="email-content">pawel.dzieniak@onet.pl</p>
-          <p class="email-content">kontakt@kamieniarstwobeton.pl</p>
+          <a href="mailto:pawel.dzieniak@onet.pl" class="email-content"
+            >pawel.dzieniak@onet.pl</a
+          >
+          <a href="mailto:kontakt@lastrobeton.pl" class="email-content"
+            >kontakt@lastrobeton.pl</a
+          >
         </div>
       </div>
-      <form>
+      <form ref="form" @submit.prevent="sendEmail">
         <div>
           <label for="name">Imię i Nazwisko</label>
           <input
             type="text"
             name="name"
             id="name"
+            v-model="name"
             aria-label="Imię i nazwisko"
             placeholder="Jan Kowalski"
           />
@@ -47,34 +52,39 @@
             type="text"
             name="email"
             id="email"
+            v-model="email"
             placeholder="jankowalski@poczta.pl"
             aria-label="Adres email"
           />
         </div>
         <div>
-          <label for="company">Nazwa firmy</label>
+          <label for="phone">Numer telefonu</label>
           <input
             type="text"
-            name="company"
-            id="company"
-            placeholder="Opcjonalnie"
-            aria-label="Firma (opcjonalnie)"
+            name="phone"
+            id="phone"
+            v-model="phone"
+            placeholder="Numer telefonu"
+            aria-label="Numer telefonu"
           />
         </div>
         <div>
           <label for="cars">Temat zapytania:</label>
-          <select name="subject" id="subject">
+          <select name="subject" id="subject" v-model="subject">
             <option value="schody_z_kamienia">Schody z kamienia</option>
             <option value="blaty_z_kamienia">Blaty z kamienia</option>
             <option value="nagrobek_pojedynczy">Nagrobek pojedyńczy</option>
             <option value="nagrobek_podwojny">Nagrobek podwójny</option>
             <option value="nagrobek_dzieciecy">Nagrobek dziecięcy</option>
             <option value="pomnik">Pomnik</option>
+            <option value="pomnik">Inne</option>
           </select>
         </div>
         <div>
           <label for="message">Wiadomość</label>
-          <textarea name="message">Wprowadź tekst zapytania</textarea>
+          <textarea name="message" v-model="message">
+Wprowadź tekst zapytania</textarea
+          >
           <button class="form-send-message">
             Wyślij zapytanie <svg-button-arrow />
           </button>
@@ -94,10 +104,56 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      subject: '',
+      name: '',
+      phone: '',
+      email: '',
+      message: '',
+    }
+  },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js',
+        },
+      ],
+    }
+  },
+  methods: {
+    sendEmail() {
+      emailjs
+        .sendForm(
+          process.env.SID,
+          process.env.TID,
+          this.$refs.form,
+          process.env.PKEY
+        )
+        .then(
+          (result) => {
+            console.log('SUCCESS!', result.text)
+          },
+          (error) => {
+            console.log('FAILED...', error.text)
+          }
+        )
+    },
+  },
+  mounted() {
+    emailjs.init(process.env.PKEY)
+  },
+}
 </script>
 
 <style scoped lang="scss">
+.phone-content,
+.email-content {
+  text-decoration: none;
+  color: black;
+}
 .entry-section-content {
   margin-top: 32px;
 }

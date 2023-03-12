@@ -1,9 +1,7 @@
 <template>
   <div class="wrapper">
     <header>
-      <h1 class="header-title">
-        Produkujemy nagrobki, blaty kamienne oraz schody z kamienia
-      </h1>
+      <h1 class="header-title">Produkujemy nagrobki, blaty oraz schody.</h1>
 
       <nuxt-link to="/oferta" class="call-to-action-button"
         >Sprawdź ofertę</nuxt-link
@@ -325,6 +323,9 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+header {
+  position: relative;
+}
 .chosen {
   font-weight: bold;
 }
@@ -623,6 +624,9 @@ export default {
   box-shadow: 0px 12px 44px 2px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
   margin: 0 8px;
+  &:nth-child(1) {
+    margin-left: 40px;
+  }
 }
 .opinion-name {
   font-weight: bold;
@@ -714,7 +718,7 @@ export default {
   .header-title {
     margin: 24px 40px 48px;
     width: 540px;
-    font-size: 48px;
+    font-size: 60px;
   }
   .call-to-action-button {
     margin-left: 40px;
@@ -746,12 +750,7 @@ export default {
   .slider-state-wrapper {
     margin: 0 40px;
   }
-  .quote-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-  }
+
   .quote {
     width: 320px;
   }
@@ -881,7 +880,7 @@ export default {
     scrollbar-width: none;
   }
   .header-title {
-    font-size: 48px;
+    font-size: 60px;
     width: 407px;
     margin: 24px 80px 48px;
   }
@@ -894,11 +893,7 @@ export default {
   .slider-state-wrapper {
     margin: 0 80px;
   }
-  .quote-wrapper {
-    position: absolute;
-    top: 176px;
-    right: 80px;
-  }
+
   .image-slider-single-image:nth-child(1) {
     width: 740px;
     height: 484px;
@@ -983,9 +978,9 @@ export default {
     padding-top: 32px;
     padding-bottom: 32px;
   }
-  .opinion-grid {
-    margin: 0 40px;
-  }
+  // .opinion-grid {
+  //   padding: 0 40px;
+  // }
   .call-to-action-wrapper {
     margin: 0 40px;
   }

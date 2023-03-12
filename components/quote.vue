@@ -52,6 +52,12 @@ export default {
   margin-top: 16px;
 }
 @media (min-width: 744px) {
+  .quote-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+  }
   .quoteOfferTablet {
     position: absolute;
     bottom: -24px;
@@ -61,8 +67,8 @@ export default {
 @media (min-width: 1280px) {
   .quote-wrapper {
     position: absolute;
-    right: 80px;
     top: 0;
+    right: 80px;
   }
 }
 </style>
