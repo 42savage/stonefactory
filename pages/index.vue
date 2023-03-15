@@ -114,7 +114,7 @@
         </p>
         <p class="text-about">
           Nasza oferta obejmuje szeroki wybór materiałów, wśród których znajdują
-          się granit, marmur, kamień naturalny oraz beton.
+          się granit, marmur.
         </p>
         <p class="text-about">
           Dzięki wieloletniemu doświadczeniu oraz zaangażowaniu naszych

@@ -183,8 +183,13 @@ header {
 .grid {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   img {
-    width: 100%;
+    width: 80%;
+    margin: 16px 0;
   }
 }
 h2 {

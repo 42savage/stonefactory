@@ -1,5 +1,15 @@
 <template>
   <section class="contact-us" id="kontakt">
+    <div
+      class="mail-modal"
+      :class="{
+        succes: infoModalState === 'succes',
+        fail: infoModalState === 'fail',
+      }"
+      v-if="showModalState"
+    >
+      <p>{{ modalMessage }}</p>
+    </div>
     <div>
       <div class="entry-section-content">
         <p class="sub-title">Przedstaw nam swoje oczekiwania</p>
@@ -112,6 +122,11 @@ export default {
       phone: '',
       email: '',
       message: '',
+      errors: [],
+      infoModalState: '',
+      modalMessage: '',
+      showModalState: false,
+      emailInited: false,
     }
   },
   head() {
@@ -124,7 +139,29 @@ export default {
     }
   },
   methods: {
+    showModal(message, state) {
+      this.modalMessage = message
+      this.infoModalState = state
+      this.showModalState = true
+      if (state === 'succes') {
+        setTimeout(() => {
+          this.showModalState = false
+          this.modalMessage = ''
+          this.infoModalState = ''
+        }, 2000)
+      } else {
+        setTimeout(() => {
+          this.showModalState = false
+          this.modalMessage = ''
+          this.infoModalState = ''
+        }, 5000)
+      }
+    },
     sendEmail() {
+      if (!this.emailInited) {
+        emailjs.init(process.env.PKEY)
+        this.emailInited = true
+      }
       emailjs
         .sendForm(
           process.env.SID,
@@ -134,21 +171,41 @@ export default {
         )
         .then(
           (result) => {
-            console.log('SUCCESS!', result.text)
+            this.showModal('Twoja wiadomość została wysłana.', 'succes')
           },
           (error) => {
-            console.log('FAILED...', error.text)
+            this.showModal(
+              'Twoja wiadomość niestety z jakiegoś powodu została nie wysłana',
+              'fail'
+            )
           }
         )
     },
-  },
-  mounted() {
-    emailjs.init(process.env.PKEY)
   },
 }
 </script>
 
 <style scoped lang="scss">
+.mail-modal {
+  position: fixed;
+  bottom: 60px;
+  right: 40px;
+  background: white;
+  width: 320px;
+  box-shadow: 0px 12px 44px 2px rgb(0 0 0 / 25%);
+  padding: 16px;
+  z-index: 11;
+}
+.fail {
+  p {
+    color: crimson;
+  }
+}
+.succes {
+  p {
+    color: rgb(4, 75, 25);
+  }
+}
 .phone-content,
 .email-content {
   text-decoration: none;
@@ -222,6 +279,7 @@ form {
   justify-content: center;
   align-items: center;
   width: 180px;
+  cursor: pointer;
   svg {
     margin-left: 16px;
   }

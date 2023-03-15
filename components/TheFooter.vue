@@ -26,7 +26,11 @@
     </div>
     <div class="socials">
       <p>Chcesz być na bieżąco? Sprawdź Facebooka naszej firmy.</p>
-      <svg-facebook-logo />
+      <a
+        href="https://www.facebook.com/profile.php?id=100088439607368"
+        target="_blank"
+        ><svg-facebook-logo
+      /></a>
     </div>
     <div class="author-section">
       <p>© Lastro-Beton Zakład Kamieniarski 2022</p>

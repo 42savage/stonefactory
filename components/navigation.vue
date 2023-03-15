@@ -153,7 +153,9 @@ export default {
   methods: {
     toggleNavigation(payload) {
       if (!this.menuState && payload !== 'logo') {
-        this.menuState = true
+        if (this.$mq !== 'lg') {
+          this.menuState = true
+        }
       } else {
         this.menuState = false
       }

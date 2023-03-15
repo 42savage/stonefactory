@@ -53,7 +53,7 @@ export const state = () => ({
         alt: 'Zdjęcie przedstawia schody z kamienia',
       },
       title: 'Schody z kamienia',
-      name: 'Praktkyczne i eleganckie',
+      name: 'Praktyczne i eleganckie',
       content:
         'Schody z kamienia są popularnym wyborem do domów ze względu na ich trwałość, elegancki wygląd i funkcjonalność. Charakteryzują się one odpornością na ścieranie, uderzenia, wilgoć i zmiany temperatury, co czyni je idealnymi do użytku domowego.',
       route: {
