@@ -54,33 +54,36 @@
             v-model="name"
             aria-label="Imię i nazwisko"
             placeholder="Jan Kowalski"
+            required
           />
         </div>
         <div>
           <label for="email">Adres email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             v-model="email"
             placeholder="jankowalski@poczta.pl"
             aria-label="Adres email"
+            required
           />
         </div>
         <div>
           <label for="phone">Numer telefonu</label>
           <input
-            type="text"
+            type="tel"
             name="phone"
             id="phone"
             v-model="phone"
             placeholder="Numer telefonu"
             aria-label="Numer telefonu"
+            required
           />
         </div>
         <div>
           <label for="cars">Temat zapytania:</label>
-          <select name="subject" id="subject" v-model="subject">
+          <select required name="subject" id="subject" v-model="subject">
             <option value="schody_z_kamienia">Schody z kamienia</option>
             <option value="blaty_z_kamienia">Blaty z kamienia</option>
             <option value="nagrobek_pojedynczy">Nagrobek pojedyńczy</option>
@@ -92,7 +95,7 @@
         </div>
         <div>
           <label for="message">Wiadomość</label>
-          <textarea name="message" v-model="message">
+          <textarea required name="message" v-model="message">
 Wprowadź tekst zapytania</textarea
           >
           <button class="form-send-message">

@@ -19,7 +19,7 @@
     </header>
     <section class="realisations-grid">
       <div ref="blatyZKamienia" id="blaty-z-kamienia" class="grid">
-        <h2 ref="title1">Blaty z kamienia</h2>
+        <h2 ref="title1">Blaty</h2>
         <nuxt-img
           draggable="false"
           v-for="blat in blaty"
@@ -31,7 +31,7 @@
       </div>
 
       <div id="schody-z-kamienia" class="grid">
-        <h2 ref="title2">Schody z kamienia</h2>
+        <h2 ref="title2">Schody</h2>
         <nuxt-img
           draggable="false"
           v-for="schody in schodyArr"
@@ -43,7 +43,7 @@
       </div>
 
       <div id="nagrobki-pojedyncze" class="grid">
-        <h2 ref="title3">Nagrobki pojedyńcze</h2>
+        <h2 ref="title3">Nagrobki pojedyncze</h2>
         <nuxt-img
           draggable="false"
           v-for="nagrobki in nagrobkiPojedyncze"

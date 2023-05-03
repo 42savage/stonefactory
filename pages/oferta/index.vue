@@ -3,13 +3,13 @@
     <header>
       <p class="title">OFERTA</p>
       <p class="content">
-        Oferujemy szeroki wybór grobów, w tym groby granitowe, marmurowe i
-        kamienne. Wszystkie nasze produkty są wykonane z najwyższej jakości
-        materiałów i spełniają najwyższe standardy jakości. Oferujemy również
-        usługi kamieniarskie, takie jak grawerowanie i konserwacja grobów.
-        Posiadamy wieloletnie doświadczenie w branży i jesteśmy gotowi pomóc
-        Państwu w doborze odpowiedniego grobu dla bliskiej osoby. Zachęcamy do
-        zapoznania się z ofertą i w razie pytań kontaktu z nami.
+        Oferujemy szeroki wybór grobów. Wszystkie nasze produkty są wykonane z
+        najwyższej jakości materiałów i spełniają najwyższe standardy jakości.
+        Oferujemy również usługi kamieniarskie, takie jak grawerowanie i
+        konserwacja grobów. Posiadamy wieloletnie doświadczenie w branży i
+        jesteśmy gotowi pomóc Państwu w doborze odpowiedniego grobu dla bliskiej
+        osoby. Zachęcamy do zapoznania się z ofertą i w razie pytań kontaktu z
+        nami.
       </p>
     </header>
     <section class="offer-content-wrapper">

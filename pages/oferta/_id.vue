@@ -36,17 +36,19 @@
           class="section-image"
           :src="currentPage.section.sectionImage"
         />
-        <ul class="bullet-list">
-          <p class="bullet-title">{{ currentPage.section.bulletTitle }}</p>
-          <li
-            class="single-bullet"
-            v-for="bullet in currentPage.section.bullets"
-            :key="bullet.id"
-          >
-            <b>{{ bullet.title }}</b
-            ><span>{{ bullet.content }}</span>
-          </li>
-        </ul>
+        <client-only>
+          <ul class="bullet-list">
+            <p class="bullet-title">{{ currentPage.section.bulletTitle }}</p>
+            <li
+              class="single-bullet"
+              v-for="bullet in currentPage.section.bullets"
+              :key="bullet.id"
+            >
+              <b>{{ bullet.title }}</b
+              ><span>{{ bullet.content }}</span>
+            </li>
+          </ul>
+        </client-only>
       </div>
     </section>
     <div class="call-to-realisations">

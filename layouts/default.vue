@@ -9,7 +9,26 @@
     <TheFooter />
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      openGraphImage: '/main_realisations/pojedyncze/45.jpg',
+    }
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'og-image',
+          property: 'og:image',
+          content: this.openGraphImage,
+        },
+      ],
+    }
+  },
+}
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 * {

@@ -289,7 +289,7 @@ export const state = () => ({
       header: {
         title: 'Schody z kamienia',
         content:
-          'W życiu każdego z nas przychodzi moment, w którym musimy zastanowić się nad tym, jak chcemy uczcić pamięć naszych bliskich, którzy odeszli. Nagrobek pojedynczy jest wyjątkowym i trwałym sposobem na to, aby wiecznie przechować w naszych sercach wspomnienia i miłość do naszych bliskich.',
+          'Solidne i eleganckie schody z kamienia będą wspaniałą ozdobą każdego wnętrza. Nasze schody produkujemy z najwyższą starannością i dopasowaniem pod indywidualne potrzeby Klienta.',
         quote: 'Popiołem i cieniem, i wspomnieniem się staniesz.',
         quoteAuthor: 'Persjusz',
         icons: [

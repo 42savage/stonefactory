@@ -27,6 +27,7 @@ export default {
   plugins: [
     { src: '~/plugins/stars.js', mode: 'client' },
     { src: '~/plugins/carousel.js', mode: 'client' },
+    { src: '~/plugins/gtag.js', mode: 'client' },
   ],
   components: true,
   buildModules: ['nuxt-gsap-module', '@nuxtjs/dotenv'],
